@@ -8,7 +8,10 @@ package com.innobles.logicalprogram
 
 fun main() {
     print(subPPString("abcd", "cdabcdcabcdabcd"))
+    print(subPPString("BOB", "BOABOB"))
 }
+//BOABOB
+
 
 fun subPPString(find: String, str: String): Int {
 

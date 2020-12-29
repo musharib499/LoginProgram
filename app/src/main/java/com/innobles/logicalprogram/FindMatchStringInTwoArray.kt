@@ -15,7 +15,7 @@ fun main() {
 
 fun containString(a1:ArrayList<String>,a2:ArrayList<String>):String{
     var hMap:HashMap<String,Boolean> = HashMap()
-    var q= a1.addAll(a2)
+    a1.addAll(a2)
     for (i in a1){
         if (hMap[i] != true){
             hMap.put(i,true)

@@ -56,7 +56,7 @@ fun applyFunction(){
 
 fun alsoFunction(){
     // Scoop  Function : 'also'
-    // Property 1 : Refer the context  object by using 'this'
+    // Property 1 : Refer the context  object by using 'it'
     // Property 1 : Return value in the 'lambda result'
     // apply function assign value to function
 
