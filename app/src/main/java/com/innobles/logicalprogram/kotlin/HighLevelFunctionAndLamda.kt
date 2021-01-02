@@ -7,18 +7,31 @@ package com.innobles.logicalprogram.kotlin
  */
 
 fun main() {
-  var p = Program()
+    var p = Program()
 
 
-    print(p.addTwoNumber(2,3,{x,y,z -> x+y +z}))
-    print(p.addTwoNumber(2,3){x,y,z -> x+y+z})
-
+    print(p.addTwoNumber(2, 3, { x, y, z -> x + y + z }))
+    println(p.addTwoNumber(2, 3) { x, y, z -> x + y + z })
+    println(sum(2, 3))
+    println(sum2(2, 3))
+    println(mul(2, 3))
 
 }
 
-class Program{
+// High Order Function : Lambda expression syntax
 
-    fun addTwoNumber(a:Int,b:Int,action:(Int,Int,Int)->Int):Int = action(a,b,b)
+
+val sum = { a: Int, b: Int -> a + b }
+
+//or
+val sum2: (a: Int, b: Int) -> Int = { a, b -> a + b }
+
+val mul = { a: Int, b: Int -> a * b }
+
+
+class Program {
+
+    fun addTwoNumber(a: Int, b: Int, action: (Int, Int, Int) -> Int): Int = action(a, b, b)
 }
 
 

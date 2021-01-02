@@ -6,32 +6,55 @@ package com.innobles.logicalprogram.dataStructure
  * musharib.ali@innobles.com
  */
 fun main() {
-  //  printPrime(100)
-   // printPrime()
-    for (i in 0..100){
-        if (primeNumberWithRecursion(i)) print("Prime : $i")
+    for (i in 0..100) {
+        if (primeNumberWithRecursion(i)) print(" Prime : $i")
+    }
+    println()
+
+    println("is prime ${isPrimeNumberSum(56)}")
+
+    print("sum digit ${isPrimeDigit(1234)}")
+
+
+}
+
+fun primeNumberWithRecursion(n: Int, i: Int = 2): Boolean {
+    if (n == 1) return true
+    if (n == 2) return true
+    if (n % i == 0) return false
+    if (i * i > n) return true
+    return primeNumberWithRecursion(n, i + 1)
+}
+
+
+// Recursive sum of digits of a number is prime or not
+fun isPrimeNumberSum(n: Int): Boolean {
+    val p = isPrimeDigit(n)
+    return when (p) {
+        1, 2, 3, 5, 7 -> true
+        else -> false
+    }
+}
+
+fun isPrimeDigit(n: Int): Int {
+    return when {
+        n == 0 -> 0
+        (n % 9 == 0) -> 9
+        else -> (n % 9)
     }
 
 
 }
 
-fun primeNumberWithRecursion(n:Int,i:Int = 2):Boolean{
-    if (n == 1) return true
-    if (n == 2) return true
-    if (n%i == 0 ) return false
-    if (i*i>n) return true
-    return primeNumberWithRecursion(n,i+1)
-}
-
 // While
-fun printPrime(){
-    var i =1
+fun printPrime() {
+    var i = 1
     var t = 100
-    while (i<t){
+    while (i < t) {
         var k = 1
-        var count  = 0
-        if (i == 1)  println("Prime : $i")
-        while (k<=i) {
+        var count = 0
+        if (i == 1) println("Prime : $i")
+        while (k <= i) {
             if (i % k == 0) count += 1
             k++
 
