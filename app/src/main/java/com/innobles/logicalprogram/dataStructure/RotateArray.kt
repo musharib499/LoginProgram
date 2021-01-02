@@ -12,7 +12,7 @@ fun main() {
 
 fun rotate(nums: IntArray, k: Int): IntArray {
     var q = k
-    var n = nums.size - 1
+    val n = nums.size - 1
     // q is grater than n cover this case modules
     if (q > n) q = q % (n + 1)
 
