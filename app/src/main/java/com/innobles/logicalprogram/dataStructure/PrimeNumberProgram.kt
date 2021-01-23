@@ -13,7 +13,8 @@ fun main() {
 
     println("is prime ${isPrimeNumberSum(56)}")
 
-    print("sum digit ${isPrimeDigit(1234)}")
+    println("sum digit ${isPrimeDigit(1234)}")
+    println("sum digit ${printPrime(10)}")
 
 
 }

@@ -1,6 +1,9 @@
 package com.innobles.logicalprogram.dataStructure
 
-import java.util.ArrayList
+import java.util.*
+import kotlin.collections.HashMap
+import kotlin.collections.arrayListOf
+import kotlin.collections.forEach
 
 /**
  * Created by Musharib Ali on 22/12/20.
@@ -9,8 +12,9 @@ import java.util.ArrayList
  */
 
 fun main() {
-println(getSubStringCount("geekforgeek","for"))
-print(getSubArray(arrayListOf(11, 1, 13, 21, 3, 7),arrayListOf(11, 3, 7, 1)))
+    println(getSubStringCount("geekforgeek", "for"))
+    println(givingStringMatch("geekforgeek", "fora"))
+    print(getSubArray(arrayListOf(11, 1, 13, 21, 3, 7), arrayListOf(11, 3, 7, 1)))
 }
 //Find substring as giving
 //Find Frequency of a substring in a string
@@ -24,24 +28,35 @@ fun getSubStringCount(str:String,target:String):Int{
 
         if (t.equals(target.length)) {
             t = 0
-            k +=1
+            k += 1
         }
 
     }
-    return   k
+    return k
 
 }
 
 
+fun givingStringMatch(a: String, b: String): Boolean {
+    var t = 0
+    var target: String = ""
+    a.forEach {
+        if (b.length == t) return true
+        if (it.equals(b[t])) t++ else t = 0
 
-fun getSubArray(a: ArrayList<Int>,b:ArrayList<Int>):Boolean{
-        var c = 0
-        if (b.size == 0) return false
-        val h = HashMap<Int,Int>()
-        a.forEach {
-            h.put(it,1)
-        }
-      b.forEach {
+    }
+    return false
+}
+
+
+fun getSubArray(a: ArrayList<Int>, b: ArrayList<Int>): Boolean {
+    var c = 0
+    if (b.size == 0) return false
+    val h = HashMap<Int, Int>()
+    a.forEach {
+        h.put(it, 1)
+    }
+    b.forEach {
           if (!h.containsKey(it)) c = 1
       }
 

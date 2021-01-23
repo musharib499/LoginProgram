@@ -7,7 +7,9 @@ package com.innobles.logicalprogram.dataStructure
  */
 
 fun main() {
-    print(rotate(intArrayOf(1, 2, 3, 4, 5, 6), 3).contentToString())
+    //  print(rotate(intArrayOf(1, 2, 3, 4, 5, 6), 3).contentToString())
+    // print(leftShift(arrayOf(1, 2, 3, 4, 5, 6),2).contentToString())
+    minimumBribes(arrayOf(1, 2, 5, 3, 4, 7, 8, 6))
 }
 
 fun rotate(nums: IntArray, k: Int): IntArray {
@@ -29,7 +31,7 @@ fun reverse(nums: IntArray, start: Int, end: Int): IntArray {
     var p = start
     var k = end
     while (p < k) {
-        var temp = nums[p]
+        val temp = nums[p]
         nums[p] = nums[k]
         nums[k] = temp
         p++
@@ -37,3 +39,56 @@ fun reverse(nums: IntArray, start: Int, end: Int): IntArray {
     }
     return nums
 }
+
+fun leftShift(a: Array<Int>, d: Int): Array<Int> {
+
+    var i = 0
+
+    var s = IntArray(d)
+    while (i < d) {
+        s[i] = a[i]
+        i++
+    }
+    i = 0
+    var k = 0
+    while (i < a.size) {
+        val r = d + i
+        if (r < a.size) {
+            a[i] = a[r]
+        } else {
+            a[i] = s[k]
+            k++
+        }
+        i++
+    }
+
+    return a
+}
+
+fun minimumBribes(q: Array<Int>) {
+    var n = q.size
+    var i = 0
+    var k = 0
+    println(q.contentToString())
+    while (i < (n - 1)) {
+        if (q[i] > q[i + 1]) {
+            var diff = q[i] - q[i + 1]
+            q[i] = q[i] + q[i + 1]
+            q[i + 1] = q[i] - q[i + 1]
+            q[i] = q[i] - q[i + 1]
+            if (diff > 1) {
+                i -= diff
+            }
+            if (i <= 0) i = 0
+            k++
+        }
+
+        i += 1
+
+    }
+    println(q.contentToString())
+    if (k < 1) println("Too chaotic") else println(k)
+
+
+}
+

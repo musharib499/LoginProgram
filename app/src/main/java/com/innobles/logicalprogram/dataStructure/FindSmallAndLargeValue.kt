@@ -7,7 +7,8 @@ package com.innobles.logicalprogram.dataStructure
  */
 fun main() {
 //print(largeAndSmallest(arrayListOf(1,2,30,20,5,3)))
-    print(largeAndSmallest(arrayListOf(20, 34, 21, -87, 92)))
+    println(largeAndSmallest(arrayListOf(20, 34, 21, -87, 92)))
+    println(smallLarge(arrayListOf(20, 34, 21, -87, 92)))
 }
 
 fun largeAndSmallest(a: ArrayList<Int>): String {
@@ -27,4 +28,18 @@ fun largeAndSmallest(a: ArrayList<Int>): String {
         i++
     }
     return "Small value $small , Large value $large"
+}
+
+fun smallLarge(a: ArrayList<Int>): String {
+
+    var s = a[0]
+    var f = a[0]
+    var i = 0
+    while (i < a.size) {
+        if (f < a[i]) f = a[i]
+        if (s > a[i]) s = a[i]
+        i++
+    }
+
+    return "small $s  and large $f"
 }

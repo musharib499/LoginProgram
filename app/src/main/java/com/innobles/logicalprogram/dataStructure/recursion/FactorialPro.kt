@@ -6,7 +6,7 @@ package com.innobles.logicalprogram.dataStructure.recursion
  * musharib.ali@innobles.com
  */
 fun main() {
-println(fact(4))
+println(fact(5))
 for (i in 0..5){
     println(fibonacci(i))
 }

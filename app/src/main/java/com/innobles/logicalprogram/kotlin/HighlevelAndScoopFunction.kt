@@ -10,10 +10,16 @@ package com.innobles.logicalprogram.kotlin
 //  High Level function
 fun main() {
     // How to use with function
+    println("With ")
     withFunction()
+    println("\nApply ")
     applyFunction()
+    println("\nAlso ")
     alsoFunction()
+    println("\nRun ")
     runFunction()
+    println()
+    printStar(3)
 }
 
 fun withFunction(){
@@ -36,29 +42,30 @@ fun withFunction(){
     print(age.toString())
 }
 
-fun applyFunction(){
+fun applyFunction() {
     // Property 1 : Refer the context  object by using 'this'
     // apply function assign value to function
+    // modify value
+    //return object
 
     var user = UserInfo()
-      user.name = "Ali"
-     user.age =20
+    user.name = "Ali"
+    user.age = 20
 
-    // how  to solve this problem class instance use  multiple time
 
 
     user.apply {
         name = "hello"
         age = 30
     }
+    print(user.name)
 
 }
 
 fun alsoFunction(){
     // Scoop  Function : 'also'
     // Property 1 : Refer the context  object by using 'it'
-    // Property 1 : Return value in the 'lambda result'
-    // apply function assign value to function
+    // Property 1 : Return value in the object
 
     var user = UserInfo()
     user.name = "Ali"
@@ -66,12 +73,12 @@ fun alsoFunction(){
 
     // how  to solve this problem class instance use  multiple time
 
-
   var u =  user.also {
         it.name = "hello"
        it.age = 30
+      "hello"
     }
-    print(u.toString())
+    print(u.name)
 
 }
 
@@ -89,20 +96,38 @@ fun runFunction(){
     // how  to solve this problem class instance use  multiple time
 
 
-    var u =  user.also {
-        it.name = "hello"
-        it.age = 30
+    var u = user.run {
+        this.name = "hello"
+        this.age = 30
+        "My musharib"
     }
-    print(u.toString())
+    print(u)
 
 }
 
 
-
-class UserInfo{
-    var name  = "Musharb"
+class UserInfo {
+    var name = "Musharb"
     var age = 20
     var address = "Khushhalpur"
     var distic = "Rampur"
+}
+
+
+fun printStar(n: Int) {
+    var i = 0
+    var k = 1
+    while (i < n) {
+        var j = 0
+        while (j < k) {
+            print("*")
+            j++
+        }
+        println()
+        i++
+        k += 2
+
+
+    }
 }
 

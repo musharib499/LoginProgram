@@ -8,17 +8,17 @@ package com.innobles.logicalprogram.kotlin
 
 fun main() {
     // fold work from initial value total number of sum
-    var sumfold = listOf(1,2,3,4).fold(0){s,e -> s+e*10}
-    print(sumfold)
+    var sumfold = listOf(1, 2, 3, 4).fold(1) { s, e -> s * e }
+    println(sumfold)
 
 
     // reduce work from initial value total number of sum
-    var sumReduce = listOf(1,2,3,4).reduce(){s,e -> s+e*10}
-    print(sumReduce)
+    var sumReduce = listOf(1, 2, 3, 4).reduce { s, e -> s * e }
+    println(sumReduce)
 
     // lateiniit  value
 
-   lateinit var name:String
+    lateinit var name: String
 //   print(name)
     name = "hello"
     println(name)

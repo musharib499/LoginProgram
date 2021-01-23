@@ -46,8 +46,6 @@ class MyArray{
     fun shiftItem(index: Int){
         for (i in index..(length-2)){
             this.data[i] = this.data[i+1]
-
-
         }
         this.length -=1
     }

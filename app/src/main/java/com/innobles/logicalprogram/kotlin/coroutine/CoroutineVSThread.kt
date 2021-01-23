@@ -1,7 +1,6 @@
 package com.innobles.logicalprogram.kotlin
 
 import kotlinx.coroutines.*
-import kotlin.concurrent.thread
 
 /**
  * Created by Musharib Ali on 09/12/20.

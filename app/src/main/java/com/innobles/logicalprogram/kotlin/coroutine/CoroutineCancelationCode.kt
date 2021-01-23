@@ -12,7 +12,6 @@ import kotlin.system.measureNanoTime
 // How to create main function runBlocking
 
 fun main() =  runBlocking {
-
     val time = measureNanoTime {
         val  mess = async {  getMessageOne()}
 

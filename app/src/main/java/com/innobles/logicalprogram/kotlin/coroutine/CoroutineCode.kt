@@ -9,7 +9,7 @@ import kotlinx.coroutines.*
  */
 
 fun main() {
-  usedCoroutines()
+ // usedCoroutines()
     asyncFunction()
 }
 

@@ -64,7 +64,6 @@ fun thirdSumMethod(a: String, b: String): String {
     var l = b.length - 1
     b.toLong()
     var carry = 0
-    var i = 0
     while (k >= 0 || l >= 0) {
         sum += ((if (k >= 0) a[k] - '0' else 0) + (if (l >= 0) a[l] - '0' else 0) + carry) % 2
         carry = ((if (k >= 0) a[k] - '0' else 0) + (if (l >= 0) a[l] - '0' else 0) + carry) / 2
@@ -76,3 +75,4 @@ fun thirdSumMethod(a: String, b: String): String {
     return sum.reversed()
 
 }
+

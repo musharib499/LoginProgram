@@ -7,7 +7,7 @@ package com.innobles.logicalprogram.dataStructure
  */
 
 fun main() {
-    print(findSecondLargeValue(arrayListOf(12, 35, 1, 10, 34, 1)))
+    println(findSecondLargeValue(arrayListOf(12, 35, 1, 10, 34, 1)))
 }
 
 fun findSecondLargeValue(ar:ArrayList<Int>):Int{
@@ -27,3 +27,6 @@ fun findSecondLargeValue(ar:ArrayList<Int>):Int{
 
     return  second
 }
+
+
+

@@ -7,7 +7,7 @@ package com.innobles.logicalprogram.dataStructure
  */
 
 fun main() {
-  print(longestIncSequence(intArrayOf(10,9,2,5,3,7,101,18)))
+  println(longestIncSequence(intArrayOf(10, 9, 2, 5, 3, 7, 101, 18)))
 }
 
 fun longestIncSequence(nums:IntArray):Int{
