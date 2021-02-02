@@ -55,10 +55,10 @@ fun applyFunction() {
 
 
     user.apply {
-        name = "hello"
+        name = "hello12"
         age = 30
     }
-    print(user.name)
+    print("${user.name},${user.age}")
 
 }
 

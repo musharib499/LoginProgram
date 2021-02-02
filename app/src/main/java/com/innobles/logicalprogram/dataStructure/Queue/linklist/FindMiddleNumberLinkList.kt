@@ -28,6 +28,7 @@ fun middleElementLinkList() {
 
 
     }
+    println(second?.data)
 
 }
 

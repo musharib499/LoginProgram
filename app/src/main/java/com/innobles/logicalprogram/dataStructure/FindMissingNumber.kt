@@ -7,7 +7,8 @@ package com.innobles.logicalprogram.dataStructure
  */
 
 fun main() {
-    print(findMissingNumber(arrayListOf(1, 2, 3, 4, 6), 6))
+   // print(findMissingNumber(arrayListOf(1, 2, 3, 4, 6), 6))
+    print(getMissingNo(intArrayOf(1, 2, 3, 4, 6), 4))
 
 }
 
@@ -19,5 +20,13 @@ fun findMissingNumber(a: ArrayList<Int>, s: Int): Int {
         i++
     }
     return totalSum
+}
+fun getMissingNo(a: IntArray, n: Int): Int {
+    var total = 1
+    for (i in 2..n + 1) {
+        total += i
+         total -= a[i - 2]
+    }
+    return total
 }
 

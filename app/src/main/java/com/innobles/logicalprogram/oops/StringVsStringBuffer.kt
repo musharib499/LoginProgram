@@ -12,6 +12,28 @@ fun main() {
     checkStringBuffer()
     println("\nString Builder")
     checkStringBuilder()
+
+    // capacity defult  : 16 , increase size  = (ol)
+    /*var a = StringBuffer()
+     println("Capacity : ${a.capacity()}")
+     a.append("12345678901234567")
+    println("Capacity : ${a.capacity()}")
+    a.append("123456789012345671")
+    a.append("123456789012345671")
+    println("Capacity : ${a.capacity()}")
+    a.append("123456789012345671")
+    println("Capacity : ${a.capacity()}")
+    a.append("123456789012345671")
+
+    a.append("123456789012345671")
+
+    a.append("123456789012345671")
+    a.append("123456789012345671")
+     println("Capacity : ${a.capacity()}")*/
+
+
+
+
 }
 
 fun checkString() {
