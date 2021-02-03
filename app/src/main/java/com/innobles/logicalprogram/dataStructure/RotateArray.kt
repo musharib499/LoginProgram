@@ -8,9 +8,10 @@ package com.innobles.logicalprogram.dataStructure
 
 fun main() {
     //  print(rotate(intArrayOf(1, 2, 3, 4, 5, 6), 3).contentToString())
+     print(rotateArray(intArrayOf(1, 2, 3, 4, 5, 6), 2).contentToString())
     // print(leftShift(arrayOf(1, 2, 3, 4, 5, 6),2).contentToString())
-   // minimumBribes(arrayOf(1, 2, 5, 3, 4, 7, 8, 6))
-    println(rotateDegree(intArrayOf(1,2,3,4,5,6,7),2).contentToString())
+    // minimumBribes(arrayOf(1, 2, 5, 3, 4, 7, 8, 6))
+    //println(rotateDegree(intArrayOf(1,2,3,4,5,6,7),2).contentToString())
 }
 
 fun rotate(nums: IntArray, k: Int): IntArray {
@@ -26,6 +27,29 @@ fun rotate(nums: IntArray, k: Int): IntArray {
 
 
     return num
+}
+
+fun rotateArray(a: IntArray, d: Int): IntArray {
+    var i = 0
+    var k = 0
+    while (i < d) {
+        var temp = a[i]
+        var j = i
+        while (j < a.size) {
+            k = j + d
+            if (k >= a.size) k -= a.size
+            if (k == i) break
+            a[j] = a[k]
+            // }
+            j = k
+
+
+        }
+        a[j] = temp
+        i++
+
+    }
+    return a
 }
 
 fun reverse(nums: IntArray, start: Int, end: Int): IntArray {

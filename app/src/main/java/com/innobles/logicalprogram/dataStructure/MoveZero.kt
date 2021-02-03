@@ -30,5 +30,5 @@ fun moveZeroes(nums: ArrayList<Int>): ArrayList<Int> {
 
 fun checkZero(p: Int, i: Int, n: Int): Int {
     if (i == n) return i
-    if (p != 0) return i else return checkZero(p, i + 1, n)
+    return if (p != 0) i else checkZero(p, i + 1, n)
 }

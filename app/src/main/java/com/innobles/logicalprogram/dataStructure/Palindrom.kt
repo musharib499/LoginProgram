@@ -7,7 +7,8 @@ package com.innobles.logicalprogram.dataStructure
  */
 
 fun main() {
-    println(checkPalindrome("mushu123,}{]-= hsum"))
+    //println(checkPalindrome("mushu123,}{]-= hsum"))
+    println(checkPalindrome2("NITIN"))
 }
 
 fun checkPalindrome(s: String): Boolean {
@@ -30,6 +31,19 @@ fun checkPalindrome(s: String): Boolean {
     }
 
     return second.equals(first)
+}
+
+
+fun checkPalindrome2(s: String): Boolean {
+    var i = 0
+
+    while (i < (s.length / 2)) {
+        if (s[i] != s[s.length - 1 - i]) return false
+        i++
+    }
+
+
+    return true
 }
 
 
