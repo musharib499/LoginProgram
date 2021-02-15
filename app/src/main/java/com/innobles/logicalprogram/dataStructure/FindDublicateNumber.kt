@@ -8,12 +8,13 @@ package com.innobles.logicalprogram.dataStructure
  */
 //How do you find duplicate numbers in an array if it contains multiple duplicates? (solution)
 fun main() {
-   // println(findDuplicateNumber(arrayListOf(1, 2, 4, 4, 5)))
-   // println(findMultipleDuplicateNumber(arrayListOf(1, 2, 4, 4, 5, 7, 8, 9, 8)))
+    // println(findDuplicateNumber(arrayListOf(1, 2, 4, 4, 5)))
+    // println(findMultipleDuplicateNumber(arrayListOf(1, 2, 4, 4, 5, 7, 8, 9, 8)))
 
-   // println(removeDuplicateNumber(arrayListOf(1, 2, 4, 4, 5, 7, 8, 9, 8)))
-    findDuplicate(intArrayOf(1, 3, 4, 7, 2, 7, 8, 7, 8))
-    findDuplicateSet(intArrayOf(1, 3, 4, 7, 2, 7, 8, 7, 8))
+    // println(removeDuplicateNumber(arrayListOf(1, 2, 4, 4, 5, 7, 8, 9, 8)))
+    //findDuplicate(intArrayOf(1, 3, 4, 7, 2, 7, 8, 7, 8))
+    //findDuplicateSet(intArrayOf(1, 3, 4, 7, 2, 7, 8, 7, 8))
+    println(printArray(arrayListOf(1, -3, 4, 5, 3, -1, 5)))
 }
 
 // Best solution  time complicity O(n) space complicity O(1) valid less 10 digit
@@ -33,15 +34,38 @@ fun findDuplicate(nums:IntArray){
     }
 }
 
-fun findDuplicateSet(nums:IntArray){
+fun findDuplicateSet(nums: IntArray) {
     var s = HashSet<Int>()
 
-    for(i in nums.indices){
-        if(s.contains(nums[i])) println(nums[i]) else s.add(nums[i])
+    for (i in nums.indices) {
+        if (s.contains(nums[i])) println(nums[i]) else s.add(nums[i])
 
     }
 }
 
+
+fun printArray(arr: ArrayList<Int>): String {
+
+    var h: HashMap<Int, Int> = HashMap()
+    var string = ""
+
+    for (i in 0..arr.size - 1) {
+        val v = Math.abs(arr[i])
+        if (h.containsKey(v)) {
+            if (arr[i] != h.get(v)) {
+                string += " ${arr[i]},${h.get(v)}"
+            }
+
+        } else {
+            h.put(v, arr[i])
+        }
+    }
+
+
+    return string
+
+
+}
 
 
 // For single duplicate number

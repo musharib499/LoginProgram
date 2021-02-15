@@ -22,6 +22,7 @@ class MyInheritance : MyInterface, MyAbstract() {
         TODO("Not yet implemented")
     }
 
+
     // Cannot create an instance of an abstract class
     // var abs = MyAbstract()
     //  var myInterface = MyInterface()

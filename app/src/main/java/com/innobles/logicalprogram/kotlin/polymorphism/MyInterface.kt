@@ -9,4 +9,7 @@ interface MyInterface {
     fun interfaceAdd()
     fun interfaceAdd(a: Int)
     fun interfaceAdd(b: String)
+    fun addInterface(): Int {
+        return 10
+    }
 }

@@ -27,7 +27,7 @@ fun nthNodeFromEnd(myLinked: MyLinked, n: Int):Int{
     var l = 0
     var temp = myLinked.head
     while (temp != null){
-          temp = temp?.next
+          temp = temp.next
         l++
     }
 
