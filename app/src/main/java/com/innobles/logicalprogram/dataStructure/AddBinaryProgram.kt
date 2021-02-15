@@ -7,8 +7,8 @@ package com.innobles.logicalprogram.dataStructure
  */
 
 fun main() {
-    println(addBinary("11", "1"))
-    println(secondSumThod("11", "1"))
+    //  println(addBinary("11", "1"))
+    //  println(secondSumThod("11", "1"))
     println(thirdSumMethod("11", "1"))
 }
 
@@ -65,8 +65,9 @@ fun thirdSumMethod(a: String, b: String): String {
     b.toLong()
     var carry = 0
     while (k >= 0 || l >= 0) {
-        sum += ((if (k >= 0) a[k] - '0' else 0) + (if (l >= 0) a[l] - '0' else 0) + carry) % 2
-        carry = ((if (k >= 0) a[k] - '0' else 0) + (if (l >= 0) a[l] - '0' else 0) + carry) / 2
+        val v = ((if (k >= 0) a[k] - '0' else 0) + (if (l >= 0) b[l] - '0' else 0) + carry)
+        sum += v % 2
+        carry = v / 2
         k--
         l--
     }

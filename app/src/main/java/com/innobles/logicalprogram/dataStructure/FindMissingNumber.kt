@@ -25,7 +25,7 @@ fun getMissingNo(a: IntArray, n: Int): Int {
     var total = 1
     for (i in 2..n + 1) {
         total += i
-         total -= a[i - 2]
+        total -= a[i - 2]
     }
     return total
 }

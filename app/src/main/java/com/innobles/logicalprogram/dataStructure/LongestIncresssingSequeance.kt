@@ -18,22 +18,22 @@ fun longestIncSequence(nums:IntArray):Int{
     var n = nums.size
     var aa = mutableListOf<Int>()
     var i = 0
-    var k = 1
-    var s = -100
-    while (i < n){
-
-        if ((i+1) < n) {
-            if ( nums[i] < nums[i + 1]) {
-
-                    k++
-                    aa.add(nums[i])
-                    s = nums[i]
+    var k = 0
+    var s = Int.MAX_VALUE
+    while (i < n - 1) {
 
 
-            } else if (  nums[i] < s) {
-                if(k>1) k--
+        if (nums[i] < nums[i + 1]) {
+
+            k++
+            aa.add(nums[i])
+            s = nums[i]
+
+
+        } else if (nums[i] < s) {
+            if (k > 0) k--
             }
-        }
+
         i++
     }
     print(aa)

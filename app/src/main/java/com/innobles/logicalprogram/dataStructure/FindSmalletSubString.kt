@@ -6,31 +6,83 @@ package com.innobles.logicalprogram.dataStructure
  * musharib.ali@innobles.com
  */
 fun main() {
-    commonSmallestSubSting("bd", "abcd")
+    println(findSubString("abcd", "bd"))
 }
 
-fun commonSmallestSubSting(f: String, s: String): Int {
-    var small = ""
-    var large = ""
-    small = if (s.length > f.length) f else s
-    large = if (s.length > f.length) s else f
 
-    var i = 0
-    var h = HashMap<String, Int>()
-    while (i < large.length) {
-        var j = 0
-        while (i < large.length - 1) {
-            if (small.contains(large.substring(i, j))) {
-                if (h.containsKey(large.substring(i, j))) {
-                    h.put(large.substring(i, j), h.get(large.substring(i, j))?.plus(1) ?: 1)
-                } else h.put(large.substring(i, j), 1)
-            }
-            j = j + i + 1
-        }
-        i++
+fun findSubString(str: String, pat: String): String? {
+    val len1 = str.length - 1
+    val len2 = pat.length - 1
 
+    // Check if string's length is
+    // less than pattern's
+    // length. If yes then no such
+    // window can exist
+    if (len1 < len2) {
+        println("No such window exists")
+        return ""
     }
-    println(h.toString())
+    val hash_pat = intArrayOf()
+    val hash_str = intArrayOf()
 
-    return -1
+    // Store occurrence ofs
+    // characters of pattern
+    for (i in 0 until len2) hash_pat[pat[i].toInt()]++
+    var start = 0
+    var start_index = -1
+    var min_len = Int.MAX_VALUE
+
+    // Start traversing the string
+    // Count of characters
+    var count = 0
+    for (j in 0 until len1) {
+
+        // Count occurrence of characters
+        // of string
+        hash_str[str[j].toInt()]++
+
+        // If string's char matches
+        // with pattern's char
+        // then increment count
+        if (hash_str[str[j].toInt()]
+            <= hash_pat[str[j].toInt()]
+        ) count++
+
+        // If all the characters are matched
+        if (count == len2) {
+
+            // Try to minimize the window
+            while (hash_str[str[start].toInt()]
+                > hash_pat[str[start].toInt()]
+                || hash_pat[str[start].toInt()]
+                == 0
+            ) {
+                if (hash_str[str[start].toInt()]
+                    > hash_pat[str[start].toInt()]
+                ) hash_str[str[start].toInt()]--
+                start++
+            }
+
+            // update window size
+            val len_window = j - start + 1
+            if (min_len > len_window) {
+                min_len = len_window
+                start_index = start
+            }
+        }
+    }
+
+    // If no window found
+    if (start_index == -1) {
+        println("No such window exists")
+        return ""
+    }
+
+    // Return substring starting
+    // from start_index
+    // and length min_len
+    return str.substring(
+        start_index,
+        start_index + min_len
+    )
 }

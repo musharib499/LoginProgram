@@ -88,26 +88,11 @@ fun secondMethod(s: String): String {
 
         var s1 = ss.subSequence(0, i)
         var s2 = ss.substring(i, ss.length).reversed()
-        var x = "$s1$s2"
-        var j = i + 1
-//        var min = ss.size-1
-//
-//        while (j<ss.size/2){
-//               if (ss[min]<ss[j]) {
-//                   var t = ss[min]
-//                   ss[min] = ss[j]
-//                   ss[j] = t
-//                   min--
-//               }
-//               j++
-//
-//
-//        }
-        var aa = x.toCharArray()
-        var t = aa[i - 1]
-        aa[i - 1] = aa[i]
-        aa[i] = t
-        return aa.concatToString()
+        var x = "$s1$s2".toCharArray()
+        var t = x[i - 1]
+        x[i - 1] = x[i]
+        x[i] = t
+        return x.concatToString()
 
     }
 
