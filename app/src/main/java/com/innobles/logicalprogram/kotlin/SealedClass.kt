@@ -9,7 +9,11 @@ package com.innobles.logicalprogram.kotlin
 fun main() {
     ///var s = SealedClass.A().display()
     SealedClass.A().display()
+    println("hello".contains("Bye"))
+}
 
+fun String.contains(string: String): String {
+    return this + string
 }
 
 sealed class SealedClass {

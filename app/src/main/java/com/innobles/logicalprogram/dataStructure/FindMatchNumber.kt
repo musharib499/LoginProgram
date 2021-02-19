@@ -1,4 +1,4 @@
-package com.innobles.logicalprogram
+package com.innobles.logicalprogram.dataStructure
 
 /**
  * Created by Musharib Ali on 09/10/20.
