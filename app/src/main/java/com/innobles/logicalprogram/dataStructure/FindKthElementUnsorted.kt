@@ -11,28 +11,26 @@ fun main() {
 }
 
 fun findMiddle(a: ArrayList<Int>, l: Int, r: Int, k: Int): Int {
-    var i = 0
-    while (i < r) {
+    if (k > 0 && k <= r) {
 
-        var p = findSmall(a, i, r)
+        var p = findPosition(a, l, r)
         if (p - 1 == k - 1) return a[p - 1]
-        if (p - 1 > k - 1) return findMiddle(a, l, p - 1, k) else findMiddle(a, p + 1, r, k - p)
+        if (p - 1 > k - 1) return findMiddle(a, l, p - 1, k)
+
+        return findMiddle(a, p + 1, r, k)
 
 
-
-        i++
     }
+
     return -1
 }
 
 
-fun findSmall(a: ArrayList<Int>, left: Int, right: Int): Int {
+fun findPosition(a: ArrayList<Int>, left: Int, right: Int): Int {
     var l = left
-    var r = right
-    var x = a[right]
     var i = l
-    while (l < r) {
-        if (a[l] <= x) {
+    while (l < right) {
+        if (a[l] <= a[right]) {
             var t = a[i]
             a[i] = a[l]
             a[l] = t

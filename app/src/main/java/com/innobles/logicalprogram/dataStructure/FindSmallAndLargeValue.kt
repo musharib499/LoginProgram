@@ -32,8 +32,8 @@ fun largeAndSmallest(a: ArrayList<Int>): String {
 
 fun smallLarge(a: ArrayList<Int>): String {
 
-    var s = a[0]
-    var f = a[0]
+    var s = Int.MAX_VALUE
+    var f = Int.MIN_VALUE
     var i = 0
     while (i < a.size) {
         if (f < a[i]) f = a[i]

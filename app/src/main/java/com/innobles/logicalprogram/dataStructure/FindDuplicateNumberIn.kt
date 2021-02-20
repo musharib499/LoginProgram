@@ -60,13 +60,13 @@ fun getDuplicateNumberSecond(array: IntArray) {
 fun getDuplicateNumberBest(array: IntArray) {
     var n = array.size
     for (i in array.indices) {
-        if (array[array[i] % n] >= n) {
-            if (array[array[i] % n] < n * 2) {
-                println(array[i] % n)
-            }
+        var v = array[i] % n
+        if (array[v] >= n && array[v] < n * 2) {
+
+            println(v)
         }
 
-        array[array[i] % n] += n
+        array[v] += n
 
     }
 
