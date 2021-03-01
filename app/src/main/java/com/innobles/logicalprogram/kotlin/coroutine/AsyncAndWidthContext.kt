@@ -41,7 +41,7 @@ fun asyncMethod() = runBlocking {
 
 
 private suspend fun doTaskOne(): String {
-    var d = 10000L
+    var d = 1000L
     var s = "$d one"
     delay(d)
     println(s)
@@ -49,7 +49,7 @@ private suspend fun doTaskOne(): String {
 }
 
 private suspend fun doTaskTwo(): String {
-    var d = 10000L
+    var d = 100L
     var s = "$d Two"
     delay(d)
     println(s)

@@ -23,13 +23,15 @@ fun main() {
 
     /**/
 
-//    val a1 = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
+    val a1 = readLine()!!.trimEnd().split(" ").map { it.toInt() }.toTypedArray()
+
+    println(a1.contentToString())
 //
 //    val b = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
 
     //val result = compareTriplets(arrayOf(17,28,30), arrayOf(99,16,8))
     //  println(diagonalDifference(arrayOf(arrayOf(11,2,4),arrayOf(4,5,6),arrayOf(10,8,-12))))
-    println(plusMinus(arrayOf(1, 2, 3, -1, -2, -3, 0, 0)).toString())
+//    println(plusMinus(arrayOf(1, 2, 3, -1, -2, -3, 0, 0)).toString())
     // println(result.joinToString(" "))
 
 

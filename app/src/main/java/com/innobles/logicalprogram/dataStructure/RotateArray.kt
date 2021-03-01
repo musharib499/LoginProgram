@@ -8,7 +8,8 @@ package com.innobles.logicalprogram.dataStructure
 
 fun main() {
     //  print(rotate(intArrayOf(1, 2, 3, 4, 5, 6), 3).contentToString())
-     print(rotateArray(intArrayOf(1, 2, 3, 4, 5, 6), 2).contentToString())
+    print(rotateArray(intArrayOf(1, 2, 3, 4, 5, 6), 2).contentToString())
+    //  print(rotateArray1(intArrayOf(1, 2, 3, 4, 5, 6,8,9,10), 3).contentToString())
     // print(leftShift(arrayOf(1, 2, 3, 4, 5, 6),2).contentToString())
     // minimumBribes(arrayOf(1, 2, 5, 3, 4, 7, 8, 6))
     //println(rotateDegree(intArrayOf(1,2,3,4,5,6,7),2).contentToString())
@@ -29,14 +30,17 @@ fun rotate(nums: IntArray, k: Int): IntArray {
     return num
 }
 
+/*
+* Time complexity : O(n)
+Auxiliary Space : O(1)
+* */
 fun rotateArray(a: IntArray, d: Int): IntArray {
     var i = 0
-    var k = 0
     while (i < d) {
         var temp = a[i]
         var j = i
         while (j < a.size) {
-            k = j + d
+            var k = j + d
             if (k >= a.size) k -= a.size
             if (k == i) break
             a[j] = a[k]
@@ -144,4 +148,5 @@ fun getDegree(d:Int,n:Int):Int{
     if (n == 0) return d
      return getDegree(d,d%n)
 }
+
 

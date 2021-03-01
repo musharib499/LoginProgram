@@ -9,9 +9,9 @@ import kotlin.math.abs
  */
 
 fun main() {
-    //getDuplicateNumber(intArrayOf(1, 2, 3, 6, 4, 6,3, 1))
-    //getDuplicateNumberSecond(intArrayOf(1, 2, 3, 6, 8,8,4, 6,3, 1))
-    getDuplicateNumberBest(intArrayOf(1, 2, 3, 6, 8, 8, 4, 6, 3, 1))
+    getDuplicateNumber(intArrayOf(1, 2, 3, 6, 4, 6, 3, 1))
+    // getDuplicateNumberSecond(intArrayOf(1, 2, 3, 6, 8,8,4, 6,3, 1))
+    // getDuplicateNumberBest(intArrayOf(1, 2, 3, 6, 8, 8, 4, 6, 3, 1))
 }
 
 /**
