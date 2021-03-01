@@ -11,7 +11,7 @@ fun main() {
     println(secondMethod("534976"))
     println(thirdMethod("534976"))
 }
-
+// Complexity O(n)
 fun findGraterNumber(s: String) {
     var ss = s.toCharArray()
     var i = ss.size - 1
@@ -24,17 +24,17 @@ fun findGraterNumber(s: String) {
     if (i == 0) print("Not possible") else {
 
 
-        var x = s[i - 1]
+        var x = ss[i - 1]
         var min = i
         var j = i + 1
-        while (j < s.length) {
+        while (j < ss.size) {
             if (ss[j] > x && ss[j] < ss[min]) {
                 min = j
             }
             j++
         }
         var temp = ss[min]
-        ss[min] = s[i - 1]
+        ss[min] = ss[i - 1]
         ss[i - 1] = temp
 
     }
