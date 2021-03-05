@@ -11,13 +11,16 @@ fun main() {
 
     print(checkCoin(a, a.size, 4))
     println()
-    print(count(intArrayOf(4, 2, 3), 3, 5))
+   // print(count(intArrayOf(4, 2, 3), 3, 5))
     println()
-    print(countWhile(intArrayOf(4, 2, 3), a.size, 2))
+    //  print(countWhile(intArrayOf(4, 2, 3), a.size, 2))
     println()
     // findPairWay(arrayListOf(3, 4, 5, 1, 0, 2, 4, 6))
 }
 
+/*
+* Time Complexity: O(mn)
+* */
 fun checkSumNumber(a: ArrayList<Int>, n: Int, sum: Int): Int {
     if (sum == 0) return 1
     if (sum < 0) return 0

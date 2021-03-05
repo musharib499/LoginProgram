@@ -14,7 +14,7 @@ fun main() {
 fun findCountDistinctElement(array: ArrayList<Int>, k: Int): String {
     var i = 0
     var result = ""
-    while (i < array.size) {
+    while (i <= array.size - k) {
         var j = i
         var s: Set<Int> = setOf<Int>()
         var r = 0
