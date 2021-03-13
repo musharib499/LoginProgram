@@ -11,7 +11,7 @@ fun main() {
 }
 
 
-// with two loop complicity will be O(n^2)
+// with two loop complicity will be O(n)
 fun minDist(arr: IntArray, x: Int, y: Int): Int {
     var n = arr.size
     var minDist = Int.MAX_VALUE

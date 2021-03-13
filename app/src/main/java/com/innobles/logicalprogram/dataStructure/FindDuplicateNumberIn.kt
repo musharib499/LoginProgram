@@ -9,9 +9,9 @@ import kotlin.math.abs
  */
 
 fun main() {
-    getDuplicateNumber(intArrayOf(1, 2, 3, 6, 4, 6, 3, 1))
-    // getDuplicateNumberSecond(intArrayOf(1, 2, 3, 6, 8,8,4, 6,3, 1))
-    // getDuplicateNumberBest(intArrayOf(1, 2, 3, 6, 8, 8, 4, 6, 3, 1))
+    //getDuplicateNumber(intArrayOf(1, 2, 3, 6, 4, 6, 10, 10))
+    //getDuplicateNumberSecond(intArrayOf(1, 2, 3, 6, 8,8,4, 6,3, 1))
+    getDuplicateNumberBest(intArrayOf(1, 2, 3, 6, 8, 8, 4, 6, 9, 9))
 }
 
 /**
@@ -19,6 +19,7 @@ fun main() {
  * Time Complexity: O(n)
  * Auxiliary Space: O(1)
  * */
+// only valid only for item small of size
 fun getDuplicateNumber(array: IntArray) {
     for (i in 0 until array.size) {
         var j = abs(array[i])
