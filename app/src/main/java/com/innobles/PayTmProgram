@@ -1,0 +1,110 @@
+// 1, 2, 3, 9, 1 , 2, 3 // k = 14 -> false, k = 4 -> true
+
+// 1, 2, 3, k = 4
+
+fun findTwoSum(ar : Int [], k : Int) : Boolean {
+    // k =4
+    var i =0
+    var h = HashMap<Int,Int>()
+    while(i<arr.size){
+      if(h.containsKey(arr[i])) {
+        if(k == (arr[i] + h.get(arr[i]))) return true
+      }
+
+      else {
+        h.put((arr[i]-sum),arr[i])
+        //
+      }
+      i++
+
+    }
+    return false
+}
+
+// 1
+
+
+// 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
+// 2 -> 1 -> 4 -> 3 -> 6 -> 5 -> 7
+
+fun reverseLink(node:Node){
+  var count = 0
+  var firstNode = node
+  while(firstNode!= null){
+      firstNode = firstNode.next;
+      count++
+  }
+  var fastNode = node // count = 7; //fastNode = 1
+  while(count>0){
+        fatsNode = reversse(fastNode,1)
+        count--
+  }
+  return fastNode
+}
+
+fun reverse(node:Node , count):Node{ // node = 1, count = 0 // node = 2, count = 1 //node = 3, count = 2
+    if(node.next == nul) return node
+    if(count  == 2) return node
+    var n = reverse(node.next,count++) // reverse(2, 1) , reverse(3, 2)
+    node.next.next = node
+    node.next = null
+    return n
+}
+
+
+class Node(data:Int,next:Node){}
+
+
+
+
+
+
+
+// 0,1,0,1,0,1,0,0,0,1
+
+
+// 0,0,0.....1,1,1
+
+
+fun sortzeroOne(ar : Int[]) {
+
+  var i = 0
+  var k = 0
+
+  while(i<ar.size){
+    if(ar[i] == 0){
+       ar[k++] = 0
+    }
+    i++
+  }
+  // 0,0,0,0,0,
+
+  while(k<ar.size){
+    ar[k] = 1
+    k++
+  }
+  // 000000,1,1,1,1
+}
+
+// 1,0,0,1
+// 0,0,0,1
+// 0,0,1,1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

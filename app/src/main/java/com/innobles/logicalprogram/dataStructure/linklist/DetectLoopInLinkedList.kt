@@ -1,4 +1,4 @@
-package com.innobles.logicalprogram.dataStructure.Queue.linklist
+package com.innobles.logicalprogram.dataStructure.linklist
 
 /**
  * Created by Musharib Ali on 12/3/21.

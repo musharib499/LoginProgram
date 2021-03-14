@@ -1,4 +1,4 @@
-package com.innobles.logicalprogram.dataStructure.Queue.linklist
+package com.innobles.logicalprogram.dataStructure.linklist
 
 /**
  * Created by Musharib Ali on 1/2/21.
@@ -7,11 +7,11 @@ package com.innobles.logicalprogram.dataStructure.Queue.linklist
  */
 
 fun main() {
-   var node = ListNode(1)
-     node.next = ListNode(2)
-     node?.next?.next = ListNode(3)
-     node?.next?.next?.next = ListNode(2)
-     node?.next?.next?.next?.next = ListNode(4)
+    var node = ListNode(1)
+    node.next = ListNode(2)
+    node.next?.next = ListNode(3)
+    node.next?.next?.next = ListNode(2)
+    node.next?.next?.next?.next = ListNode(4)
 
     println(isPalindrome(node))
 }
@@ -23,10 +23,10 @@ fun isPalindrome(h:ListNode):Boolean{
     while (node != null && s != null ){
         println(s.data)
         println(node.data)
-        if (s.data != node?.data) return false
+        if (s.data != node.data) return false
 
-         s = s?.next!!
-         node = node.next
+        s = s.next!!
+        node = node.next
     }
     return true
 }
