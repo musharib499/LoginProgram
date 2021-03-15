@@ -7,7 +7,8 @@ package com.innobles.logicalprogram.dataStructure
  */
 
 fun main() {
-    print(moveZeroes(arrayListOf(1, 2, 3, 0, 2, 3, 4)))
+    //  print(moveZeroes(arrayListOf(1, 2, 3, 0, 2, 3, 4)))
+    print(moveZeroStart(arrayListOf(1, 2, 0, 0, 0, 3, 6)))
 }
 
 fun moveZeroes(nums: ArrayList<Int>): ArrayList<Int> {
@@ -22,6 +23,26 @@ fun moveZeroes(nums: ArrayList<Int>): ArrayList<Int> {
     }
     while (k < n) {
         nums[k++] = 0
+    }
+
+    return nums
+}
+
+
+// single loop
+fun moveZeroStart(nums: ArrayList<Int>): ArrayList<Int> {
+
+    var i = 0
+    var count = 0
+    while (i < nums.size) {
+        if (nums[i] == 0) {
+            var t = nums[count]
+            nums[count] = nums[i]
+            nums[i] = t
+            count++
+
+        }
+        i++
     }
 
     return nums
