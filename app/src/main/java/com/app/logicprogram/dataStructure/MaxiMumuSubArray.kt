@@ -8,30 +8,34 @@ package com.app.logicprogram.dataStructure
 
 fun main() {
 
-    print(maxSubArray(intArrayOf(-2,1)))
+    print(maxSubArray(intArrayOf(5, 5, 10, 100, 10, 5)))
+    print(getMaxSumOfNonAdjacentElements(intArrayOf(5, 5, 10, 100, 10, 5)))
 
 }
 
 fun maxSubArray(nums: IntArray): Int {
-    if (nums.size ==0) return 0
+    var n = nums.size
+    if (n == 0) return 0
+    if (n == 1) return  nums[0]
+    var maxSumOf = IntArray(n)
+     maxSumOf[0] = nums[0]
+     maxSumOf[1] = maxOf(nums[0],nums[1])
+     for (i in 2 until n) {
+         maxSumOf[i] = maxOf(maxSumOf[i-2] + nums[i],maxSumOf[i-1])
+     }
 
-    if (nums.size ==1) return  nums[0]
+    return maxSumOf[n-1]
+}
 
-    if (nums.size ==2) return  if ( nums[0]>nums[1]) nums[0] else nums[1]
+// or
 
-    var first = nums[0]
-    var second = nums[0]
-    for(i in nums){
-
-        if(i>=first){
-            second = first
-            first = i
-
-        }else if(i> second && i != first){
-            second = i
-        }
-
+fun getMaxSumOfNonAdjacentElements(arr: IntArray): Int {
+    var element = arr[0]
+    var excl = 0
+    for (i in 1 until arr.size) {
+        val temp = element
+        element = maxOf(arr[i] + excl, element)
+        excl = temp
     }
-    return first + second
-
+    return maxOf(element, excl)
 }

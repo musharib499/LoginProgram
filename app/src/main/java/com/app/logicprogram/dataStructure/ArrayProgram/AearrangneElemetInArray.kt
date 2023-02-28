@@ -12,7 +12,7 @@ fun main() {
 
 private fun rearrangeElement(array: Array<Int>):Array<Int> {
 
-    var hashMap = HashMap<Int,Int>()
+    val hashMap = HashMap<Int,Int>()
 
     array.forEachIndexed {index, element ->
         hashMap[element] = index

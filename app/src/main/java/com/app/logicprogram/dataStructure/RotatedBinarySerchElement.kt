@@ -9,6 +9,8 @@ package com.app.logicprogram.dataStructure
 fun main() {
     //println(search(intArrayOf(4,5,6,7,0,1,2),0))
     println(maxSumSubmatrix(arrayOf(intArrayOf(2,2,-1)),0))
+   // val arr = intArrayOf(2,2,-1)
+   // println(binarySearch(arr,0,arr.size ,-1))
 }
 
 
@@ -50,4 +52,22 @@ fun maxSumSubmatrix(matrix: Array<IntArray>, k: Int): Int {
     }
 
     return if(max>k)k else max
+}
+
+fun getBinaryIndex(arr:IntArray,start: Int,end: Int, number:Int) :Int {
+    if (start>end) return -1
+
+    val mid = (start+end)/2
+    if (arr[mid] == number) return mid
+//5, 6, 7, 8, 9, 10, 1, 2, 3 // 10
+    if (arr[start] <= arr[mid]) {
+        if (number >= arr[start] && number <= arr[mid]) {
+          return  getBinaryIndex(arr,start,mid-1,number)
+        }
+        return  getBinaryIndex(arr,mid+1,end,number)
+    }
+
+    if (number >= arr[mid] && number <= arr[end]) return getBinaryIndex(arr,mid+1,end,number)
+
+    return getBinaryIndex(arr,start,mid-1,number)
 }
