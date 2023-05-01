@@ -1,0 +1,105 @@
+Factory Method Pattern vs Abstract Factory Pattern with example
+
+ChatGPT
+The Factory Method Pattern and Abstract Factory Pattern are both creational design patterns that provide a way to create objects without specifying the exact class of object that will be created. However, they differ in their structure and intended use.
+
+The Factory Method Pattern is used when we need to create a single product, but we don't know the exact class of the product at compile time. It defines an interface for creating an object, but lets subclasses decide which class to instantiate. This allows us to defer object creation to subclasses, which can customize the way objects are created without changing the client code.
+
+On the other hand, the Abstract Factory Pattern is used when we need to create a family of related products, and we want to ensure that the products created by a factory are compatible with each other. It provides an interface for creating families of related or dependent objects without specifying their concrete classes. This allows us to create products that are compatible with each other and ensures that the client code only uses products from a single factory.
+
+Here's an example to illustrate the difference between the two patterns:
+
+Suppose we are building a game that allows players to choose a character. Each character has a weapon and armor, and we want to ensure that the weapons and armor are compatible with each other. We can use the Abstract Factory Pattern to create factories that produce families of related products:
+
+kotlin
+Copy code
+interface Weapon {
+    fun attack()
+}
+
+interface Armor {
+    fun defend()
+}
+
+interface CharacterFactory {
+    fun createWeapon(): Weapon
+    fun createArmor(): Armor
+}
+
+class KnightFactory : CharacterFactory {
+    override fun createWeapon(): Weapon {
+        return Sword()
+    }
+
+    override fun createArmor(): Armor {
+        return PlateArmor()
+    }
+}
+
+class ArcherFactory : CharacterFactory {
+    override fun createWeapon(): Weapon {
+        return Bow()
+    }
+
+    override fun createArmor(): Armor {
+        return LeatherArmor()
+    }
+}
+
+class Sword : Weapon {
+    override fun attack() {
+        println("Swing sword")
+    }
+}
+
+class Bow : Weapon {
+    override fun attack() {
+        println("Shoot bow")
+    }
+}
+
+class PlateArmor : Armor {
+    override fun defend() {
+        println("Block with plate armor")
+    }
+}
+
+class LeatherArmor : Armor {
+    override fun defend() {
+        println("Dodge with leather armor")
+    }
+}
+In this example, we have defined two types of characters: knights and archers. We have also defined two factories: KnightFactory and ArcherFactory. Each factory can create one weapon and one armor that are compatible with each other.
+
+Alternatively, if we only need to create a single product, we can use the Factory Method Pattern:
+
+kotlin
+Copy code
+interface Weapon {
+    fun attack()
+}
+
+class WeaponFactory {
+    fun createWeapon(type: String): Weapon {
+        return when (type) {
+            "Sword" -> Sword()
+            "Bow" -> Bow()
+            else -> throw IllegalArgumentException("Invalid weapon type")
+        }
+    }
+}
+
+class Sword : Weapon {
+    override fun attack() {
+        println("Swing sword")
+    }
+}
+
+class Bow : Weapon {
+    override fun attack() {
+        println("Shoot bow")
+    }
+}
+In this example, we have defined a single type of product: weapons. We have also defined a factory: WeaponFactory. The factory creates different types of weapons based on a parameter passed to it.
+
+In summary, the Factory Method Pattern is used when we need to create a single product, and the Abstract Factory Pattern is used when we need to create a family of related products. Both patterns allow us to encapsulate object creation logic and make it easier to add new products or change the way products are created without affecting the client code.

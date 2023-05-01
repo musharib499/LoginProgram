@@ -39,7 +39,5 @@ class LinkedList {
         var data = d
         var next: Node? = null
     }
-
-
 }
 
