@@ -1,0 +1,51 @@
+Sure, here's a breakdown of design patterns by category and subtypes:
+
+Creational Patterns: These patterns provide ways to create objects while hiding the creation logic from the client. The subtypes are:
+
+Singleton Pattern: Ensures a class has only one instance and provides a global point of access to it.
+
+Factory Method Pattern: Defines an interface for creating objects, but lets subclasses decide which class to instantiate.
+
+Abstract Factory Pattern: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+Builder Pattern: Separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+
+Prototype Pattern: Specifies the kind of object to create using a prototypical instance, and creates new objects by cloning this prototype.
+
+Structural Patterns: These patterns deal with object composition to form large structures from individual objects. The subtypes are:
+
+Adapter Pattern: Converts the interface of a class into another interface the client expects.
+
+Bridge Pattern: Decouples an abstraction from its implementation so that the two can vary independently.
+
+Composite Pattern: Allows you to compose objects into tree structures to represent part-whole hierarchies.
+
+Decorator Pattern: Attaches additional responsibilities to an object dynamically without changing its original class.
+
+Facade Pattern: Provides a simplified interface to a complex subsystem, making it easier to use.
+
+Flyweight Pattern: Reduces the memory footprint of large numbers of similar objects by sharing them.
+
+Behavioral Patterns: These patterns are concerned with communication between objects and the assignment of responsibilities between them. The subtypes are:
+
+Chain of Responsibility Pattern: Allows you to chain objects together and pass a request along the chain until an object handles it.
+
+Command Pattern: Encapsulates a request as an object, allowing you to parameterize clients with different requests, queue or log requests, and support undoable operations.
+
+Interpreter Pattern: Defines a representation for a grammar or language, and provides an interpreter to interpret sentences in the language.
+
+Iterator Pattern: Provides a way to access the elements of an object without exposing its underlying representation.
+
+Mediator Pattern: Defines an object that encapsulates how a set of objects interact, promoting loose coupling by keeping objects from referring to each other explicitly.
+
+Memento Pattern: Allows you to capture and externalize an object's internal state, so that the object can be restored to that state later.
+
+Observer Pattern: Defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically.
+
+State Pattern: Allows an object to alter its behavior when its internal state changes.
+
+Strategy Pattern: Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+
+Template Method Pattern: Defines the skeleton of an algorithm in a method, deferring some steps to subclasses.
+
+Visitor Pattern: Allows you to add new operations to objects without changing their classes by separating the operation from the object structure.

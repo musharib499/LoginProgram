@@ -1,0 +1,8 @@
+The Builder Pattern is a creational design pattern that provides a way to create complex objects step by step. It separates the construction of an object from its representation, allowing us to create different representations of the same object.
+
+The Builder Pattern consists of the following components:
+
+Product: The object that is being built.
+Builder: An interface that defines the steps required to build the product.
+Concrete Builder: A class that implements the builder interface and provides methods to construct and return the product.
+Director: An optional class that defines the order in which the builder methods are called, and can simplify the client code.
