@@ -1,5 +1,7 @@
 package com.app.logicprogram.dataStructure
 
+import kotlin.math.max
+
 /**
  * Created by Musharib Ali on 28/10/20.
  * I.S.T Pvt. Ltd
@@ -8,23 +10,33 @@ package com.app.logicprogram.dataStructure
 
 fun main() {
 
-    print(maxSubArray(intArrayOf(5, 5, 10, 100, 10, 5)))
-    print(getMaxSumOfNonAdjacentElements(intArrayOf(5, 5, 10, 100, 10, 5)))
+   // println(maxSubArray(intArrayOf(5, 5, 10, 100, 10, 5)))
+ //   println(getMaxSumOfNonAdjacentElements(intArrayOf(5, 5, 10, 100, 10, 5)))
+    println(maxProduct(intArrayOf(0,2)))
+
+}
+fun maxProduct(nums: IntArray): Int {
+    var maxSum = Int.MIN_VALUE
+    var subPro = 1
+    nums.forEach {
+        if(it == 0) subPro = 1
+        subPro *= it
+        maxSum = maxOf(subPro,maxSum)
+    }
+    return maxSum
 
 }
 
+// 100% case success
 fun maxSubArray(nums: IntArray): Int {
-    var n = nums.size
-    if (n == 0) return 0
-    if (n == 1) return  nums[0]
-    var maxSumOf = IntArray(n)
-     maxSumOf[0] = nums[0]
-     maxSumOf[1] = maxOf(nums[0],nums[1])
-     for (i in 2 until n) {
-         maxSumOf[i] = maxOf(maxSumOf[i-2] + nums[i],maxSumOf[i-1])
-     }
-
-    return maxSumOf[n-1]
+    var maxSum = Int.MIN_VALUE
+    var subSum = 0
+    nums.forEach {
+        if (subSum < 0) subSum = 0
+        subSum +=it
+        maxSum = max(subSum, maxSum)
+    }
+    return maxSum
 }
 
 // or

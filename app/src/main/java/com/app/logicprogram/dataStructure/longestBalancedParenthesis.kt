@@ -11,11 +11,37 @@ fun main() {
     //println(findParenthesisEqualCount("()(()))())"))
     // println(findParenthesisEqualCount("{]{}"))
     //  println(findParenthesis("()(()))())"))
-    println(findLongestBalanceParenthesis("()(()))())"))
-    println(findLongestBalanceParenthesis("{]{}"))
-    println(findLongestBalanceParenthesis("}{"))
-    println(findLongestBalanceParenthesis("}{"))
-    println(findLongestBalanceParenthesis("{}}}"))
+//    println(findLongestBalanceParenthesis("()(()))())"))
+//    println(findLongestBalanceParenthesis("{]{}"))
+//    println(findLongestBalanceParenthesis("}{"))
+//    println(findLongestBalanceParenthesis("}{"))
+//    println(findLongestBalanceParenthesis("{}}}"))
+
+    println(isBalanced("}][}}(}][))]"))
+}
+
+
+// Best Wasy and 100% all case run
+fun isBalanced(s: String): String {
+    val hashMap = hashMapOf( ')' to '(', '}' to '{', ']' to '[' )
+    val stack = Stack<Char>()
+
+    s.forEach {
+
+        if(hashMap.contains(it)) {
+            if( stack.isNotEmpty() && stack.peek() == hashMap.getValue(it)) {
+                stack.pop()
+            } else {
+                return "NO"
+            }
+        } else  {
+            stack.push(it)
+        }
+
+    }
+
+    return if(stack.isEmpty()) "YES" else "NO"
+
 }
 
 fun findParenthesisEqualCount(s: String): Int {
@@ -91,6 +117,8 @@ fun findLongestBalanceParenthesis(s: String): Int {
 
     return max
 }
+
+
 
 
 

@@ -1,5 +1,7 @@
 package com.app.logicprogram.dataStructure
 
+import java.time.temporal.TemporalAmount
+
 /**
  * Created by Musharib Ali on 28/12/20.
  * I.S.T Pvt. Ltd
@@ -9,12 +11,12 @@ fun main() {
     val a = arrayListOf(2, 1, 3)
     //  print(checkSumNumber(a,a.size,4))
 
-    print(checkCoin(a, a.size, 4))
+   // print(checkCoin(a, a.size, 4))
     println()
    // print(count(intArrayOf(4, 2, 3), 3, 5))
     println()
     //  print(countWhile(intArrayOf(4, 2, 3), a.size, 2))
-    println()
+    println(coinWayChange(intArrayOf(2,3,5),7))
     // findPairWay(arrayListOf(3, 4, 5, 1, 0, 2, 4, 6))
 }
 
@@ -114,6 +116,26 @@ fun findPairWay(a: ArrayList<Int>) {
 
     }
 }
+
+// Best Solution
+
+
+fun coinWayChange(coins:IntArray, amount: Int) :Int {
+    var  arr = IntArray(amount+1) {amount+1}
+    arr[0] = 0
+
+    for (i in 1..amount) {
+        for (c in coins) {
+            if (i-c>=0) {
+                arr[i] = minOf(arr[i], 1+arr[i-c])
+            }
+        }
+    }
+
+
+    return if(arr[amount] != amount+1) arr[amount] else -1
+}
+
 
 
 

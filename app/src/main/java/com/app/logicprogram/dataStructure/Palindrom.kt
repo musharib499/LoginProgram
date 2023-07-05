@@ -8,7 +8,8 @@ package com.app.logicprogram.dataStructure
 
 fun main() {
     //println(checkPalindrome("mushu123,}{]-= hsum"))
-    println(checkPalindrome2("NITIN"))
+   // println(checkPalindrome2("NITIN"))
+    println(isPalindrome("A man, a plan, a canal: Panama"))
 }
 
 fun checkPalindrome(s: String): Boolean {
@@ -45,5 +46,22 @@ fun checkPalindrome2(s: String): Boolean {
 
     return true
 }
+
+
+fun isPalindrome(s: String): Boolean {
+    var t = ""
+
+    s.forEach {
+        if(it in 'a'..'z') {
+            t+=it
+        }
+        if(it in 'A'..'Z') {
+            t+= it + 32
+        }
+    }
+    return t == t.reversed()
+
+}
+
 
 

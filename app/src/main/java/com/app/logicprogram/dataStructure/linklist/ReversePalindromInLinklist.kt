@@ -15,7 +15,7 @@ fun main() {
 
     println(isPalindrome(node))
 }
-class ListNode(var data: Int) { var next: ListNode? = null }
+class ListNode(var data: Int? = 0) { var next: ListNode? = null }
 fun isPalindrome(h:ListNode):Boolean{
     var s:ListNode = h
     var node = reverse(h)
