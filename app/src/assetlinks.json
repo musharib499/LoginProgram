@@ -1,9 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.balancehero.truebalance.s",
-    "sha256_cert_fingerprints":
-    ["6F:09:19:78:01:3C:20:0B:2F:4A:64:6C:8E:72:65:99:6A:3B:FC:64:1A:20:03:51:00:6A:8F:65:DD:D5:2E:7E"]
-  }
-}]
