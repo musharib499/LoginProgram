@@ -3,8 +3,9 @@ package com.app.logicprogram.dataStructure
 import kotlin.math.max
 
 fun main() {
-    val maxValue = maxProductSubArray(intArrayOf(-2,0,-1))
-    println(maxValue)
+    //val maxValue = maxProductSubArray(intArrayOf(-2,0,-1))
+  //  println(maxValue)
+    println(maximumProduct(intArrayOf(-1,-2,-3,-4)))
 
 }
 
@@ -29,4 +30,14 @@ private fun maxProductSubArray(nums:IntArray):Int{
 
     return maxPositive
 
+}
+
+fun maximumProduct(nums: IntArray): Int {
+    if(nums.size<3) return -1
+    if(nums.size == 3) return nums[0]*nums[1]*nums[2]
+
+    var sorted = nums.sorted()
+    var first = sorted[sorted.size-1]*sorted[sorted.size-2]*sorted[sorted.size-3]
+    var second = sorted[0]*sorted[1]*sorted[sorted.size-1]
+    return if(first>second) first else second
 }
