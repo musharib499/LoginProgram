@@ -1,0 +1,37 @@
+
+ Whats is dependencyInject ?
+ Ans -> DependencyInjection = Providing services to clients from "outside"(Dependency injection is just passing service into clients from outside) which is called dependency injection
+
+ Three way to inject service from outside
+   1. Constructor Injection
+   2. Method Injection
+   3. Field Injection(Property Injection)
+
+## Pro and cons of fundamental techniques of dependency injection
+
+     1. Constructor Injection
+         Pros :
+            1. Simple
+            2. Constructor signature reflection dependencies
+            3. Injected filed can be finalized
+            4. Easy to mock service in unit test
+         Cons:
+            1. NONE
+
+     2. Method Injection
+         Pros:
+             1. Method Signature reflects dependency
+             2. Can happen after construction
+         Cons:
+              1. Not as explicit as constructor injection
+              2. Can lead to implicit ordering requirements
+
+     3. Filed (Property) Injection
+         Pros:
+              1. Can happen after construction
+         Cons:
+              1. All cons of method injection(non explicit, temporal coupling)
+
+
+
+

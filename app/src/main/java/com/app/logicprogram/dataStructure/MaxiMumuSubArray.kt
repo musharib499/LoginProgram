@@ -12,7 +12,8 @@ fun main() {
 
    // println(maxSubArray(intArrayOf(5, 5, 10, 100, 10, 5)))
  //   println(getMaxSumOfNonAdjacentElements(intArrayOf(5, 5, 10, 100, 10, 5)))
-    println(maxProduct(intArrayOf(0,2)))
+   // println(maxProduct(intArrayOf(0,2)))
+    println(miniMaxSum(arrayOf(140537896, 243908675, 670291834, 923018467, 520718469)))
 
 }
 fun maxProduct(nums: IntArray): Int {
@@ -50,4 +51,22 @@ fun getMaxSumOfNonAdjacentElements(arr: IntArray): Int {
         excl = temp
     }
     return maxOf(element, excl)
+}
+
+
+fun miniMaxSum(arr: Array<Int>): Unit {
+    var max:Long = 0
+    var min:Long = 0
+    arr.sort()
+
+    var k = 0
+
+    while(k<4 && k<arr.size) {
+        min += arr[k]
+        max += arr[arr.size-k-1]
+        k++
+    }
+
+    println("$min $max")
+
 }

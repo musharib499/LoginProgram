@@ -16,7 +16,6 @@ fun maxProfit(prices: IntArray): Int {
         if (prices[left] < prices[right]) {
             maxProfit = maxOf(maxProfit, prices[right] - prices[left])
         } else {
-
             left = right
         }
         right++
