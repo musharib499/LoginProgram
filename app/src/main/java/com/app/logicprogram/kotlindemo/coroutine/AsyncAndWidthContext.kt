@@ -19,6 +19,7 @@ fun main() {
     withContextMethod()
     println("Async")
     asyncMethod()
+    block()
 }
 
 // they return result but execute in sequence (one by one)
@@ -60,4 +61,17 @@ private suspend fun doTaskTwo(): String {
     delay(d)
    // println(s)
     return s
+}
+
+fun block() {
+    runBlocking {
+       this.launch(Dispatchers.IO) {
+            println("Hello")
+           delay(10000)
+            // Perform any other background tasks here
+            withContext(Dispatchers.Default) {
+                println("Main")
+            }
+        }
+    }
 }
