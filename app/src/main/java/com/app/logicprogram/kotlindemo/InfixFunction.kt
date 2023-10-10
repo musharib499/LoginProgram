@@ -12,6 +12,7 @@ infix fun Int.plus(x: Int): Int { return this + x }
 
 infix fun Int.multiple(x: Int): Int { return this * x }
 infix fun Long.multiple(x: Long): Long { return this * x }
+infix fun Double.multiple(x: Double): Double { return this * x }
 infix fun String.plus(x: String): String { return this + x }
 infix fun List<Any>.plusItem(x:Any):List<Any> {
     return this.plus(x)
