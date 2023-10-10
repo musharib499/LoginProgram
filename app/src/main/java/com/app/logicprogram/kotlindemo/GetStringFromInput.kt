@@ -7,7 +7,7 @@ package com.app.logicprogram.kotlindemo
  */
 
 fun main() {
-    val list = List(10) { readLine()!!.toInt() }
+    val list = List(10) { readln().toInt() }
     //var value  = name.split(",","{","}").toList()
     print(list)
 

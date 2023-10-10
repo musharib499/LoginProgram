@@ -15,37 +15,34 @@ fun main() {
 }
 
 fun removeDuplicateLettersHasMap(s:String):String {
-    var h = HashMap<Char, Int>()
-    for (item in s) {
-        if (h.containsKey(item)) {
-            h.put(item, (h.get(item)?.plus(1) ?: 0))
+    val hashMap = mutableMapOf<Char, Int>()
+
+    for (e in s) {
+        if (hashMap.contains(e)) {
+            hashMap[e] = hashMap.getValue(e) + 1
         } else {
-            h.put(item, 1)
+            hashMap[e] = 1
         }
     }
-    var resultStack = Stack<Char>()
-    var resultMap = HashSet<Char>()
-    for (char in s) {
-        if (!resultMap.contains(char)) {
-            while (resultStack.size > 0) {
-                var top = resultStack[resultStack.size - 1]
-                if (top < char || h.get(top) == 0) {
-                    break
-                }
 
-                resultStack.pop()
-                resultMap.remove(top)
 
+    var i = 0
+
+    val hSet = mutableSetOf<Char>()
+    for (it in s) {
+        hashMap[it] = hashMap[it]!! - 1
+        if (!hSet.contains(it)) {
+            while (hSet.isNotEmpty() && it < hSet.last() && hashMap[hSet.last()]!! > 0) {
+                hSet.remove(hSet.last())
             }
-
-            resultStack.push(char)
-            resultMap.add(char)
-
+            hSet.add(it)
         }
-        h.put(char,(h.get(char)?.minus(1)?:0))
+
+
+        i++
+
     }
-       print("${resultStack},${resultMap}")
-        return resultStack.joinToString("")
+    return hSet.joinToString("")
     }
 
     fun removeDuplicateLetters(s: String): String {

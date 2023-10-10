@@ -5,15 +5,28 @@ package com.app.logicprogram.dataStructure
  * I.S.T Pvt. Ltd
  * musharib.ali@app.com
  */
-
+typealias A1 =(i :Int) -> Boolean
+typealias A2 =(i :Int) -> Boolean
 fun main() {
     //  print(rotate(intArrayOf(1, 2, 3, 4, 5, 6), 3).contentToString())
    // print(rotateArray(intArrayOf(1, 2, 3, 4, 5, 6), 2).contentToString())
     //  print(rotateArray1(intArrayOf(1, 2, 3, 4, 5, 6,8,9,10), 3).contentToString())
     // print(leftShift(arrayOf(1, 2, 3, 4, 5, 6),2).contentToString())
     // minimumBribes(arrayOf(1, 2, 5, 3, 4, 7, 8, 6))
-    println(rotateArray1(intArrayOf(1,2,3,4,5,6,7),2).contentToString())
+   // println(rotateArray1(intArrayOf(1,2,3,4,5,6,7),2).contentToString())
+//    var p1= Person("Hello")
+//    var p2= Person("Hello")
+//    println(p1 != p2 && p1.hashCode() ==p2.hashCode())
+    val a : A2 = { i-> i%2 == 0}
+
+    var list = listOf<Article>(Article("1","Bye"), Article("2","Bye"), Article(null,"Bye"), Article("Hello",null), Article(null,null), Article("LAST","LastBye") )
+    println(filterArticles(list))
+
+
 }
+fun test(a : A1) = a.invoke(1)
+
+data class Person(val name :String)
 
 fun rotate(nums: IntArray, k: Int): IntArray {
     var q = k
@@ -170,5 +183,27 @@ fun rotateArray1(nums: IntArray, k: Int): IntArray {
 
 
 }
+
+data class Article(val title: String?, val storyTitle: String?)
+
+fun filterArticles(articles: List<Article>): List<String> {
+    return articles.filter { article ->
+        when {
+            article.title != null -> true
+            article.storyTitle != null -> true
+            else -> false
+        }
+    }.mapNotNull { article ->
+        when {
+            article.title != null -> article.title
+            article.storyTitle != null -> article.storyTitle
+            else -> null
+        }
+    }
+}
+
+
+
+
 
 

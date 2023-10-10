@@ -49,7 +49,7 @@ fun romanToInt(s: String): Int {
     var result = 0
     var prvious = 0
     for(i in s.indices.reversed()) {
-        val current = hashMap.getValue(s[i])!!
+        val current = hashMap.getValue(s[i])
         if(current >= prvious) {
             result += current
         } else {

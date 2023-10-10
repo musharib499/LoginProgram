@@ -10,7 +10,7 @@ fun main() {
 }
 
 
-fun findSubString(str: String, pat: String): String? {
+fun findSubString(str: String, pat: String): String {
     val len1 = str.length - 1
     val len2 = pat.length - 1
 
@@ -27,7 +27,7 @@ fun findSubString(str: String, pat: String): String? {
 
     // Store occurrence ofs
     // characters of pattern
-    for (i in 0 until len2) hash_pat[pat[i].toInt()]++
+    for (i in 0 until len2) hash_pat[pat[i].code]++
     var start = 0
     var start_index = -1
     var min_len = Int.MAX_VALUE
@@ -39,27 +39,27 @@ fun findSubString(str: String, pat: String): String? {
 
         // Count occurrence of characters
         // of string
-        hash_str[str[j].toInt()]++
+        hash_str[str[j].code]++
 
         // If string's char matches
         // with pattern's char
         // then increment count
-        if (hash_str[str[j].toInt()]
-            <= hash_pat[str[j].toInt()]
+        if (hash_str[str[j].code]
+            <= hash_pat[str[j].code]
         ) count++
 
         // If all the characters are matched
         if (count == len2) {
 
             // Try to minimize the window
-            while (hash_str[str[start].toInt()]
-                > hash_pat[str[start].toInt()]
-                || hash_pat[str[start].toInt()]
+            while (hash_str[str[start].code]
+                > hash_pat[str[start].code]
+                || hash_pat[str[start].code]
                 == 0
             ) {
-                if (hash_str[str[start].toInt()]
-                    > hash_pat[str[start].toInt()]
-                ) hash_str[str[start].toInt()]--
+                if (hash_str[str[start].code]
+                    > hash_pat[str[start].code]
+                ) hash_str[str[start].code]--
                 start++
             }
 

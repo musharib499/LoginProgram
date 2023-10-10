@@ -1,0 +1,12 @@
+https://proandroiddev.com/zero-to-hero-in-android-kotlin-creational-design-patterns-a972375c352a
+
+The Prototype pattern is a creational design pattern that allows objects to be created by copying existing objects, rather than creating new ones from scratch.
+It is used when creating a new object is either expensive or impossible.
+Complexity: 🟢 ⚪ ⚪
+Popularity: 🟢 🟢 ⚪
+
+The Prototype pattern is good for several reasons:
+
+It reduces the need for subclasses: When creating new objects based on existing ones, the Prototype pattern reduces the need for creating subclasses to instantiate new objects, this can simplify the codebase.
+It improves performance: The Prototype pattern improves performance by avoiding the overhead of creating a new object from scratch. Instead, it creates a copy of an existing object, which can be faster and less memory-intensive.
+It allows for dynamic object creation: The Prototype pattern allows for dynamic object creation, this can be very useful when the type of object that needs to be created is not known until runtime.

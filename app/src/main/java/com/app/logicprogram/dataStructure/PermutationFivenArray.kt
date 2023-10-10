@@ -20,18 +20,24 @@ fun getPermutation(parm:List<Int>):List<List<Int>> {
 fun printPermutation(result: MutableList<MutableList<Int>>,list: MutableList<Int>, left:Int, right:Int) {
     var newList = list
     if (left == right) {
-        println(newList)
-        result.add(newList)
+        val l = mutableListOf<Int>()
+        newList.forEach {
+            l.add(it)
+        }
+        result.add(l)
+        return
 
     }
-    else {
         for (i in left..right) {
-            newList = swipe(newList, left,i)
+            if (i != left) {
+                newList = swipe(newList, left, i)
+            }
             printPermutation(result, newList, left + 1, right)
-            newList = swipe(newList, i, left)
+            if(i != left) {
+                newList = swipe(newList, i, left)
+            }
 
         }
-    }
 }
 
 fun swipe(list: MutableList<Int>, left:Int, right:Int):MutableList<Int> {
@@ -40,3 +46,4 @@ fun swipe(list: MutableList<Int>, left:Int, right:Int):MutableList<Int> {
     list[right] = t
     return list
 }
+

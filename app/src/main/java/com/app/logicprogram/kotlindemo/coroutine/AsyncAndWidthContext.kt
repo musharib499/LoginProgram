@@ -15,9 +15,9 @@ fun main() {
            println("WithContext")
        }*/
 
-    println("WithContext")
-    withContextMethod()
-    println("Async")
+//    println("WithContext")
+//    withContextMethod()
+//    println("Async")
     asyncMethod()
     block()
 }
@@ -35,13 +35,13 @@ fun withContextMethod() = runBlocking {
 
 // they return result but execute in parallel (both together)
 fun asyncMethod() = runBlocking {
-
-    val resultOne = async { doTaskOne() }
-     println(resultOne)
-    val resultTwo = async { doTaskTwo() }
-    println(resultTwo)
-    val resultText = " final result with async : ${resultOne.await()} - ${resultTwo.await()}"
-    println(resultText)
+       val resultOne = async { doTaskOne() }
+       println("resultOne :$resultOne")
+       val resultTwo = async { doTaskTwo() }
+       println("resultTwo :$resultTwo")
+       val resultText = " final result with async : ${resultOne.await()} - ${resultTwo.await()}"
+       println(resultText)
+    println("Hello")
 }
 
 //  println( withContext(Dispatchers.IO){ doTaskOne() })
@@ -51,15 +51,15 @@ private suspend fun doTaskOne(): String {
     var d = 10L
     var s = "$d one"
     delay(d)
-  //  println(s)
+    println( "doTaskOne = $s")
     return s
 }
 
 private suspend fun doTaskTwo(): String {
-    var d = 10000L
+    var d = 1000L
     var s = "$d Two"
     delay(d)
-   // println(s)
+   println( "doTaskTwo = $s")
     return s
 }
 

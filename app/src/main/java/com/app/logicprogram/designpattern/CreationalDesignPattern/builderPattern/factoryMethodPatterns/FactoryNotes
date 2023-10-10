@@ -1,0 +1,153 @@
+
+The Factory Method pattern is a creational design pattern that provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created.
+It defines a method for creating objects, which subclasses can then override to change the type of objects that will be created.
+
+Complexity: 🟢 ⚪ ⚪
+
+Popularity: 🟢 🟢 🟢
+
+
+The Factory Method pattern is good for several reasons:
+
+It promotes loose coupling: By encapsulating the process of creating objects in a separate factory class, it allows the client code to remain unaware of the specific classes that are being instantiated, promoting loose coupling between the client code and the objects it uses.
+It allows for easy modification: Because the factory method is defined in an interface or abstract class, it can be easily overridden by subclasses to change the type of objects that are created. This makes it easy to modify the code to create different types of objects without affecting the client code.
+It allows for code reuse: By encapsulating the process of creating objects in a separate factory class, it allows for code reuse across multiple classes. This can lead to a more organized and efficient codebase.
+It simplifies object creation: By encapsulating the process of creating objects in a factory class, it can simplify the creation of complex objects, making it easier to create and manage them throughout the lifetime of the application.
+It supports the Open-Closed Principle: The Factory Method pattern allows new objects to be added to the system without modifying existing client code, it supports the open-closed principle which states that classes should be open for extension but closed for modification.
+
+
+
+kotlin
+Copy code
+interface Weapon {
+    fun attack()
+}
+
+interface Armor {
+    fun defend()
+}
+
+interface CharacterFactory {
+    fun createWeapon(): Weapon
+    fun createArmor(): Armor
+}
+
+class KnightFactory : CharacterFactory {
+    override fun createWeapon(): Weapon {
+        return Sword()
+    }
+
+    override fun createArmor(): Armor {
+        return PlateArmor()
+    }
+}
+
+class ArcherFactory : CharacterFactory {
+    override fun createWeapon(): Weapon {
+        return Bow()
+    }
+
+    override fun createArmor(): Armor {
+        return LeatherArmor()
+    }
+}
+
+class Sword : Weapon {
+    override fun attack() {
+        println("Swing sword")
+    }
+}
+
+class Bow : Weapon {
+    override fun attack() {
+        println("Shoot bow")
+    }
+}
+
+class PlateArmor : Armor {
+    override fun defend() {
+        println("Block with plate armor")
+    }
+}
+
+class LeatherArmor : Armor {
+    override fun defend() {
+        println("Dodge with leather armor")
+    }
+}
+In this example, we have defined two types of characters: knights and archers. We have also defined two factories: KnightFactory and ArcherFactory. Each factory can create one weapon and one armor that are compatible with each other.
+
+Alternatively, if we only need to create a single product, we can use the Factory Method Pattern:
+
+kotlin
+Copy code
+interface Weapon {
+    fun attack()
+}
+
+class WeaponFactory {
+    fun createWeapon(type: String): Weapon {
+        return when (type) {
+            "Sword" -> Sword()
+            "Bow" -> Bow()
+            else -> throw IllegalArgumentException("Invalid weapon type")
+        }
+    }
+}
+
+class Sword : Weapon {
+    override fun attack() {
+        println("Swing sword")
+    }
+}
+
+class Bow : Weapon {
+    override fun attack() {
+        println("Shoot bow")
+    }
+}
+In this example, we have defined a single type of product: weapons. We have also defined a factory: WeaponFactory. The factory creates different types of weapons based on a parameter passed to it.
+
+In summary, the Factory Method Pattern is used when we need to create a single product, and the Abstract Factory Pattern is used when we need to create a family of related products. Both patterns allow us to encapsulate object creation logic and make it easier to add new products or change the way products are created without affecting the client code.
+
+
+Here is a real-world implementation of the Factory Method pattern in Android:
+
+interface RetrofitApi {
+    fun create(): Retrofit
+}
+
+class ProductionRetrofitApi : RetrofitApi {
+    override fun create(): Retrofit {
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://production-api.com")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        return retrofit
+    }
+}
+
+class StagingRetrofitApi : RetrofitApi {
+    override fun create(): Retrofit {
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://staging-api.com")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        return retrofit
+    }
+}
+
+class RetrofitApiFactory {
+    companion object {
+        fun createRetrofitApi(apiType: String): RetrofitApi? {
+            return when (apiType) {
+                "production" -> ProductionRetrofitApi()
+                "staging" -> StagingRetrofitApi()
+                else -> null
+            }
+        }
+    }
+}
+
+val productionApi = RetrofitApiFactory.createRetrofitApi("production")?.create()
+val stagingApi = RetrofitApiFactory.createRetrofitApi("staging")?.create()

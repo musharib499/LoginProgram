@@ -8,6 +8,7 @@ package com.app.logicprogram.dataStructure
 
 fun main() {
     findTriplets()
+
 }
 
 fun findTriplets() {

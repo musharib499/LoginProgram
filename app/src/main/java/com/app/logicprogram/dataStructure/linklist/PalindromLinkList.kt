@@ -22,7 +22,7 @@ fun isPalindrome(head: ListNodeP?): Boolean {
 
     while(fast != null && fast.next != null) {
 
-        fast = fast?.next?.next
+        fast = fast.next?.next
         slow = slow?.next
     }
 
@@ -31,8 +31,8 @@ fun isPalindrome(head: ListNodeP?): Boolean {
     var pre : ListNodeP? = null
 
     while (slow != null) {
-        val temp = slow?.next
-        slow?.next = pre
+        val temp = slow.next
+        slow.next = pre
         pre = slow
         slow = temp
     }
@@ -43,8 +43,8 @@ fun isPalindrome(head: ListNodeP?): Boolean {
     while (right != null && left != null) {
         if(right.`val` != left.`val`) return false
 
-        left = left?.next
-        right = right?.next
+        left = left.next
+        right = right.next
     }
 
     return true

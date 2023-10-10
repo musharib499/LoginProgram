@@ -25,7 +25,7 @@ fun addBinary(a: String, b: String): String {
         sum += (if (i >= 0) a.get(i) - '0' else 0) + (if (j >= 0) b.get(j) - '0' else 0)
 
         // value = (sum % 2 + 48).toChar() + value
-        value = (sum % 2 + '0'.toInt()).toChar() + value
+        value = (sum % 2 + '0'.code).toChar() + value
         sum = sum / 2
         i--
         j--

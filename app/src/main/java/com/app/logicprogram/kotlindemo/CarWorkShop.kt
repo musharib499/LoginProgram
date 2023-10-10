@@ -55,7 +55,7 @@ inline fun CharSequence?.isNullOrBlank(): Boolean {
     return this == null || this.isBlank()
 }
 
-public fun Iterable<Int>.sum(): Int {
+fun Iterable<Int>.sum(): Int {
     var sum: Int = 0
     for (element in this) {
         sum += element
@@ -82,8 +82,7 @@ class PhoneBookIncorrect {
 }
 
 
-class PhoneBookCorrect {
-}
+class PhoneBookCorrect
 
 private fun String.isPhoneNumber(): Boolean {
     return length == 7 && all { it.isDigit() }

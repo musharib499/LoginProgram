@@ -24,10 +24,6 @@ fun kthElement(a: IntArray, k: Int) {
         a[p] = a[i] - a[p]
         a[i] = a[i] - a[p]
 
-
-
-
-
         println(a[i])
         println()
         i++

@@ -30,8 +30,8 @@ fun findPosition(a: ArrayList<Int>, left: Int, right: Int): Int {
     var l = left
     var i = l
     while (l < right) {
-        if (a[l] <= a[right]) {
-            var t = a[i]
+        if (a[l] <= a[right]) {  // 4 < 6
+            val t = a[i]
             a[i] = a[l]
             a[l] = t
             i++

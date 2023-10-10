@@ -80,8 +80,8 @@ fun mergeKLists(lists: Array<ListNode?>): ListNode? {
     lists.forEach {
         var head = it
         while(head != null) {
-            list.add(head?.data?:0)
-            head = head?.next
+            list.add(head.data ?:0)
+            head = head.next
         }
     }
     list.sort()
@@ -91,7 +91,7 @@ fun mergeKLists(lists: Array<ListNode?>): ListNode? {
     while (i>=0){
         var t = node
         node = ListNode(list[i])
-        node?.next = t
+        node.next = t
         i--
     }
     return node

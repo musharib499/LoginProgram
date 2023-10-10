@@ -9,8 +9,6 @@ fun kSmallestPairs(nums1: IntArray, nums2: IntArray, k: Int): List<List<Int>> {
     var j = 0
     var r = 0
     var k = 0
-    var lastSecond = nums2[nums2.size-1]
-    var firstSecond = nums1[nums1.size-1]
     var list = mutableListOf<List<Int>>()
     while(j<nums1.size && r<nums2.size && k<=3) {
 

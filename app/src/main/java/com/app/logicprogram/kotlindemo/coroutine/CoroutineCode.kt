@@ -1,16 +1,24 @@
 package com.app.logicprogram.kotlindemo
 
 import kotlinx.coroutines.*
-
 /**
  * Created by Musharib Ali on 08/11/20.
  * I.S.T Pvt. Ltd
  * musharib.ali@app.com
  */
 
+/** Link : for study ->
+ * https://kotlinlang.org/docs/coroutines-basics.html#your-first-coroutine
+ */
+
+
 fun main() {
  // usedCoroutines()
-    asyncFunction()
+   // asyncFunction()
+    Mycorounte()
+    runBlocking { MycorounteScop() }
+    main1()
+
 }
 
 @ExperimentalCoroutinesApi
@@ -71,4 +79,45 @@ fun usedCoroutines(){
 
 
 
+}
+
+
+fun Mycorounte() = runBlocking {
+     println("Start")
+    // this: CoroutineScope
+    val startTime = System.currentTimeMillis()
+    launch { // launch a new coroutine and continue
+        delay(3000L) // non-blocking delay for 1 second (default time unit is ms)
+        println("World!") // print after delay
+    }
+    delay(1000)
+    println("Hello") // main coroutine continues while a previous one is delayed
+    println(System.currentTimeMillis()-startTime)
+}
+
+suspend fun MycorounteScop() = coroutineScope {
+    println("$this - Start")
+    // this: CoroutineScope
+    val startTime = System.currentTimeMillis()
+    launch { // launch a new coroutine and continue
+        delay(3000L) // non-blocking delay for 1 second (default time unit is ms)
+        println("$this - World!") // print after delay
+    }
+    delay(1000)
+    println("$this - Hello") // main coroutine continues while a previous one is delayed
+    println(System.currentTimeMillis()-startTime)
+}
+
+
+fun main1()  {
+    repeat(50) { // launch a lot of coroutines
+       val startTime = System.currentTimeMillis()
+        print("/")
+        Thread {
+            Thread.sleep(100L)
+            print(".")
+
+        }.start()
+        println(System.currentTimeMillis()-startTime)
+    }
 }

@@ -3,10 +3,10 @@ package com.app.logicprogram.dataStructure.linklist
 fun main() {
 // [1,2,3,4,5] n = 2 remover from end
     var node = ListNode(1)
-    node?.next = ListNode(2)
-    node?.next?.next = ListNode(3)
-    node?.next?.next?.next = ListNode(4)
-    node?.next?.next?.next?.next = ListNode(5)
+    node.next = ListNode(2)
+    node.next?.next = ListNode(3)
+    node.next?.next?.next = ListNode(4)
+    node.next?.next?.next?.next = ListNode(5)
     var outNode = removeNthFromEnd(node, 4)
     while (outNode != null) {
         println(outNode.data)

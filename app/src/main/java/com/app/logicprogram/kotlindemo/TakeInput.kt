@@ -23,7 +23,7 @@ fun main() {
 
     /**/
 
-    val a1 = readLine()!!.trimEnd().split(" ").map { it.toInt() }.toTypedArray()
+    val a1 = readln().trimEnd().split(" ").map { it.toInt() }.toTypedArray()
 
     println(a1.contentToString())
 //

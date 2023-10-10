@@ -11,11 +11,11 @@ fun main() {
     var node = mergeTwoLinkList(node1,node2)
     while (node!= null) {
         println(node.data)
-        node = node?.next!!
+        node = node.next!!
     }
 }
 
-fun mergeTwoLinkList(node1 : ListNode?, node2: ListNode?):ListNode? {
+fun mergeTwoLinkList(node1 : ListNode?, node2: ListNode?): ListNode {
     var n1 = node1
     var n2 = node2
     var dummyNode:ListNode? = null
@@ -28,7 +28,7 @@ fun mergeTwoLinkList(node1 : ListNode?, node2: ListNode?):ListNode? {
     }
     var tail = dummyNode
     while (n1!= null && n2 != null) {
-         if(n1?.data!! < n2?.data!!) {
+         if(n1.data!! < n2.data!!) {
              tail?.next = n1
              n1 = n1.next
          }else {

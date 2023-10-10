@@ -19,9 +19,9 @@ fun findSecondLargerValueLinkedList(node: ListNode?):Int {
         var value = head.data
         if (value!! > first) {
             second = first
-            first = value!!
-        } else if (value!!>second && value<first) {
-            second = value!!
+            first = value
+        } else if (value >second && value<first) {
+            second = value
         }
         head = head.next
     }

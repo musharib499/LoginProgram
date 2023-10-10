@@ -1,13 +1,11 @@
 package com.app.logicprogram.kotlindemo.LooperAndHander
 
-import android.graphics.Color
 import android.os.*
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.foodmonk.logicprogram.R
+import com.app.logicprogram.R
 
-class LooperMainActivity() : AppCompatActivity() ,View.OnClickListener {
+class LooperMainActivity : AppCompatActivity() ,View.OnClickListener {
     val myLooperThread = MyLooperThread()
     private  val TAG = "LooperMainActivity"
     private var myHandelr:MyHandelr? = null

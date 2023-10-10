@@ -9,13 +9,13 @@ fun main() {
     //fun readInts() = readLine()!!.split(' ').map { it.toInt() }
     //  println(readInts())
 
-    var c = readLine()!!.toInt()
-    var n = readLine()!!.toInt()
-    var k = readLine()!!
+    var c = readln().toInt()
+    var n = readln().toInt()
+    var k = readln()
     var arr = arrayListOf<Int>()
     for (k in 1..n) {
 
-        arr.add(readLine()!!.toInt())
+        arr.add(readln().toInt())
     }
     println(arr.toString())
 }

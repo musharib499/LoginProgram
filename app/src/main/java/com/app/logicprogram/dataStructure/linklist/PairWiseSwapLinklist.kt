@@ -10,8 +10,7 @@ fun main() {
     var node = ListNode(1)
     node.next = ListNode(2)
     node.next?.next = ListNode(3)
-    node.next?.next?.next = ListNode(2)
-    node.next?.next?.next?.next = ListNode(4)
+    node.next?.next?.next = ListNode(4)
     var out: ListNode? = pairWiseSwap(node)
     while (out != null) {
         println(out.data)
@@ -21,7 +20,7 @@ fun main() {
 
 fun pairWiseSwap(node: ListNode?): ListNode? {
     var head = node
-    while (head != null && head.next != null) {
+    while (head?.next != null) {
         var temp = head.data
         head.data = head.next?.data ?: 0
         head.next?.data = temp
