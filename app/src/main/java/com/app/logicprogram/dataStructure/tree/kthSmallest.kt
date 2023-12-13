@@ -6,7 +6,7 @@ fun main() {
   var root = TreeNode(3)
      root.left = TreeNode(1)
     root.right = TreeNode(4)
-    root?.left?.right = TreeNode(2)
+    root.left?.right = TreeNode(2)
   //  println(kthSmallest(root,1))
 
     println(findSecondMinimumValue(root))
@@ -21,9 +21,9 @@ fun kthSmallest(root: TreeNode?, k: Int): Int {
 
 private fun triverse(node:TreeNode?, list:MutableList<Int>,k: Int) {
     if(node == null || list.size > k) return
-    triverse(node?.left, list,k)
+    triverse(node.left, list,k)
     list.add(node.`val`)
-    triverse(node?.right, list,k)
+    triverse(node.right, list,k)
 
     var tree = TreeSet<Int>()
     tree.pollFirst()
@@ -41,8 +41,8 @@ fun findSecondMinimumValue(root: TreeNode?): Int {
 private fun triverse(node:TreeNode?, list:TreeSet<Int>) {
 
     if(node == null || list.size>2) return
-    triverse(node?.left,list)
+    triverse(node.left,list)
     list.add(node.`val`)
-    triverse(node?.right,list)
+    triverse(node.right,list)
 
 }

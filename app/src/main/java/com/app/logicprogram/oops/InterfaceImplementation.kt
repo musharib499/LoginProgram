@@ -9,7 +9,7 @@ abstract class AsAbstract {
 
     abstract fun addAbstract()
     abstract fun addTwoAbstract()
-    public fun addNewAbstract() {
+    fun addNewAbstract() {
         println("No Abstruct")
     }
 
@@ -35,9 +35,6 @@ class ChildClass : AsAbstract(), AsInterface {
         TODO("Not yet implemented")
     }
 
-    override fun addWithBody() {
-        super.addWithBody()
-    }
 }
 
 interface AsInterface {

@@ -6,9 +6,9 @@ fun main() {
     node.next?.next = ListNodeP(3)
     node.next?.next?.next = ListNodeP(2)
     node.next?.next?.next?.next = ListNodeP(1)
- //println(isPalindrome(node))
- println(getAverages(intArrayOf(40527,53696,10730,66491,62141,83909,78635,18560),2).contentToString())
- println(getAverages(intArrayOf(7,4,3,9,1,8,5,2,6),3).contentToString())
+ println(isPalindrome(node))
+ //println(getAverages(intArrayOf(40527,53696,10730,66491,62141,83909,78635,18560),2).contentToString())
+ //println(getAverages(intArrayOf(7,4,3,9,1,8,5,2,6),3).contentToString())
 }
 
 

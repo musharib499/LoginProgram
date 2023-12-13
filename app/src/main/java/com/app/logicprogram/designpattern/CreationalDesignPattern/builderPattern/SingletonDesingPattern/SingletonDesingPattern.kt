@@ -6,7 +6,7 @@ fun main() {
 
 }
 
-class SingletonExample() {
+class SingletonExample {
     companion object {
         private var instant: SingletonExample? = null
         fun getInstance(): SingletonExample? = instant ?: run {

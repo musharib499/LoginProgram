@@ -18,7 +18,7 @@ class Node2(var data: Int, var next: Node2? = null)
 fun detectLoop(head: Node2?): Boolean {
     var fast = head
     var slow = head
-    while (fast != null && fast.next != null && slow != null) {
+    while (fast?.next != null && slow != null) {
         fast = fast.next?.next
         slow = slow.next
         if (fast == slow) return true

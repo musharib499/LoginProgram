@@ -15,9 +15,9 @@ fun main() {
            println("WithContext")
        }*/
 
-//    println("WithContext")
-//    withContextMethod()
-//    println("Async")
+    println("WithContext")
+    withContextMethod()
+    println("Async")
     asyncMethod()
     block()
 }
@@ -41,7 +41,6 @@ fun asyncMethod() = runBlocking {
        println("resultTwo :$resultTwo")
        val resultText = " final result with async : ${resultOne.await()} - ${resultTwo.await()}"
        println(resultText)
-    println("Hello")
 }
 
 //  println( withContext(Dispatchers.IO){ doTaskOne() })

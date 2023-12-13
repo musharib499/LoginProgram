@@ -6,8 +6,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 // Perfect example for factoryMethod design pattern for creating object
 fun main() {
-   val stage = RetrofitFactoryMethod.createFactoryMethod("stage")?.create()
-   val production = RetrofitFactoryMethod.createFactoryMethod("production")?.create()
+   val stage = RetrofitFactoryMethod.createFactoryMethod("stage").create()
+   val production = RetrofitFactoryMethod.createFactoryMethod("production").create()
 }
 
 
@@ -32,9 +32,9 @@ class StageRetrofitApi: RetrofitApi {
             .build()
     }
 }
-class RetrofitFactoryMethod() {
+class RetrofitFactoryMethod {
     companion object {
-        fun createFactoryMethod(type:String) : RetrofitApi? {
+        fun createFactoryMethod(type:String) : RetrofitApi {
            return when (type) {
                 "production" -> ProductionRetrofitApi()
                 else -> StageRetrofitApi()

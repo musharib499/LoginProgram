@@ -1,7 +1,7 @@
 package com.app.logicprogram.kotlindemo
 
 fun main() {
-    println(1 plus  3)
+    println(1 plus  3 + 3)
     println(2 multiple   3)
     println("Hello" plus  "Mushareb" plus "Ali")
     println(listOf<Any>("Hello") plusItem   "Bye")

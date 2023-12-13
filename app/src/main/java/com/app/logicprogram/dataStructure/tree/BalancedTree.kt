@@ -14,8 +14,8 @@ fun isBalanced(root: TreeNode?): Boolean {
     var maxDiff = 0
     fun height(root:TreeNode?):Int {
         if(root == null) return -1
-        var left = height(root?.left)
-        var right = height(root?.right)
+        var left = height(root.left)
+        var right = height(root.right)
         maxDiff = maxOf(maxDiff, Math.abs(left-right))
         return 1+ maxOf(left, right)
     }

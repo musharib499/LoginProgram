@@ -20,9 +20,9 @@ fun middleElementLinkList() {
 
     var first = link.node
     var second = link.node
-    while (first != null && first.next != null) {
-        println("f ${first.next?.data}")
-        println("s ${second?.next?.data}")
+    while (first?.next != null) {
+    //    println("f ${first.next?.data}")
+     //   println("s ${second?.next?.data}")
         first = first.next?.next
         second = second?.next
 

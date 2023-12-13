@@ -20,7 +20,7 @@ fun findSecondLargerValueLinkedList(node: ListNode?):Int {
         if (value!! > first) {
             second = first
             first = value
-        } else if (value >second && value<first) {
+        } else if (value > second && value<first) {
             second = value
         }
         head = head.next

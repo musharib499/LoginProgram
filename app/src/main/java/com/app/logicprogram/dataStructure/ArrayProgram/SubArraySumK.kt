@@ -10,7 +10,7 @@ fun main() {
 
     var aa:String? = null
     var value:Hello? = Hello("Hello")
-    val kotlin = (value as? Hello)?.st
+    val kotlin = value?.st
     println(kotlin)
      runBlocking {
          var task  = GlobalScope.launch {

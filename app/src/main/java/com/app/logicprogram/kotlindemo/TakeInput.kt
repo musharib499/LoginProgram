@@ -34,7 +34,6 @@ fun main() {
 //    println(plusMinus(arrayOf(1, 2, 3, -1, -2, -3, 0, 0)).toString())
     // println(result.joinToString(" "))
 
-
 }
 
 fun getInputArray(arr: ArrayList<Int>) {

@@ -121,7 +121,7 @@ fun findPairWay(a: ArrayList<Int>) {
 
 
 fun coinWayChange(coins:IntArray, amount: Int) :Int {
-    var  arr = IntArray(amount+1) {amount+1}
+    val arr = IntArray(amount+1) {amount+1}
     arr[0] = 0
 
     for (i in 1..amount) {

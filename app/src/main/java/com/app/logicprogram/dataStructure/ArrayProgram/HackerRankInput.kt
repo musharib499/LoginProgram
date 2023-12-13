@@ -8,9 +8,9 @@ fun main(args: Array<String>) {
 
 
 fun getArray() : Array<Int> {
-    val arCount = readLine()!!.trim().toInt()
+    val arCount = readln().trim().toInt()
 
-    val ar = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
+    val ar = readln().trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
 
 
 

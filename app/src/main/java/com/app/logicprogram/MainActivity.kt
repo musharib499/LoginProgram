@@ -2,28 +2,52 @@ package com.app.logicprogram
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import com.app.logicprogram.databinding.ActivityMainBinding
 import com.app.logicprogram.fragmentManage.FragmentA
-import com.app.logicprogram.fragmentManage.FragmentB
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    val scope = GlobalScope
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        replaceFragment(FragmentA(), true)
-        lifecycleScope.launch(Dispatchers.Main) {
-            delay(8000)
-            replaceFragment(FragmentB(), false)
+//
+        binding.btnAddFragment.setOnClickListener {
+
+            addFragment(FragmentA.newInstance("",""),true)
+        }
+
+        binding.btnMediaterLivedata.setOnClickListener {
+          //  replaceFragment(MediaterLiveDataFragment.newInstance(),true)
+
         }
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setOnOff(true)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        setOnOff(false)
+    }
+
+    fun setOnOff(isVisible:Boolean){
+        if (isVisible) {
+            binding.linearLayout.visibility = View.VISIBLE
+            binding.container.visibility = View.GONE
+            return
+        }
+        binding.container.visibility = View.VISIBLE
+        binding.linearLayout.visibility = View.GONE
     }
 
     private fun addFragment(fragment: Fragment, backToStack: Boolean) {

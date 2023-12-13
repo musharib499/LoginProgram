@@ -16,10 +16,10 @@ fun swapPairs(head: ListNode?): ListNode? {
     var h = head
 
     while(h?.next != null) {
-        val temp = h?.data
-        h?.data = h?.next?.data ?: 0
-        h?.next?.data = temp
-        h = h?.next?.next
+        val temp = h.data
+        h.data = h.next?.data ?: 0
+        h.next?.data = temp
+        h = h.next?.next
 
     }
 
